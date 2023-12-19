@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,7 +31,7 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
@@ -39,7 +39,7 @@ using NUnit.Framework;
 
 #if !(DNXCORE50 || NET20 || NET35) || NETSTANDARD2_0 || NET6_0_OR_GREATER
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Serializer
 {
     [TestFixture]
     public class CustomTraceWriter : TestFixtureBase

@@ -28,7 +28,7 @@ using System;
 using System.Drawing;
 #endif
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
 #if !(DNXCORE50)
     public class MetroColorConverter : JsonConverter

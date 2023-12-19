@@ -35,21 +35,21 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Linq;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Utilities;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Tests.Documentation
+namespace pyRevitLabs.Json.Tests.Documentation
 {
     public class Employee
     {
@@ -143,9 +143,9 @@ namespace Newtonsoft.Json.Tests.Documentation
         [Test]
         public void ShouldSerializeContractResolverTest()
         {
-            Newtonsoft.Json.Tests.Documentation.Employee joe = new Newtonsoft.Json.Tests.Documentation.Employee();
+            pyRevitLabs.Json.Tests.Documentation.Employee joe = new pyRevitLabs.Json.Tests.Documentation.Employee();
             joe.Name = "Joe Employee";
-            Newtonsoft.Json.Tests.Documentation.Employee mike = new Newtonsoft.Json.Tests.Documentation.Employee();
+            pyRevitLabs.Json.Tests.Documentation.Employee mike = new pyRevitLabs.Json.Tests.Documentation.Employee();
             mike.Name = "Mike Manager";
 
             joe.Manager = mike;

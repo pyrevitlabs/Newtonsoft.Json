@@ -33,18 +33,18 @@ using System.Linq;
 using System.Numerics;
 #endif
 using System.Text;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Tests.Linq
+namespace pyRevitLabs.Json.Tests.Linq
 {
     [TestFixture]
     public class DynamicTests : TestFixtureBase
@@ -952,7 +952,7 @@ namespace Newtonsoft.Json.Tests.Linq
 
             ExceptionAssert.Throws<InvalidOperationException>(
                 () => { JObject token = json.uid; },
-                "Can not convert from System.Guid to Newtonsoft.Json.Linq.JObject.");
+                "Can not convert from System.Guid to pyRevitLabs.Json.Linq.JObject.");
         }
     }
 

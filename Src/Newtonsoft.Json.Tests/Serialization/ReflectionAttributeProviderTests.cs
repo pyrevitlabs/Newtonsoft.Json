@@ -29,19 +29,19 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Utilities;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Serialization
+namespace pyRevitLabs.Json.Tests.Serialization
 {
     [TestFixture]
     public class ReflectionAttributeProviderTests : TestFixtureBase
@@ -69,7 +69,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         {
             PropertyInfo property;
 #if DNXCORE50 && !(NETSTANDARD2_0 || NET6_0_OR_GREATER)
-            property = Newtonsoft.Json.Utilities.TypeExtensions.GetProperty(typeof(ReflectionTestObject), "TestProperty");
+            property = pyRevitLabs.Json.Utilities.TypeExtensions.GetProperty(typeof(ReflectionTestObject), "TestProperty");
 #else
             property = typeof(ReflectionTestObject).GetProperty("TestProperty");
 #endif
@@ -88,7 +88,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         {
             FieldInfo field;
 #if DNXCORE50 && !(NETSTANDARD2_0 || NET6_0_OR_GREATER)
-            field = (FieldInfo)Newtonsoft.Json.Utilities.TypeExtensions.GetField(typeof(ReflectionTestObject), "TestField");
+            field = (FieldInfo)pyRevitLabs.Json.Utilities.TypeExtensions.GetField(typeof(ReflectionTestObject), "TestField");
 #else
             field = typeof(ReflectionTestObject).GetField("TestField");
 #endif

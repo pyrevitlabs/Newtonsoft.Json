@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
@@ -38,20 +38,20 @@ using System.Xml;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json;
+using pyRevitLabs.Json;
 using System.IO;
 using System.Reflection;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.JsonTextReaderTests;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.JsonTextReaderTests;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests
+namespace pyRevitLabs.Json.Tests
 {
     [TestFixture]
     public class JsonTextWriterTest : TestFixtureBase

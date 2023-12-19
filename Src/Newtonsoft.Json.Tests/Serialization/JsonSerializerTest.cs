@@ -47,33 +47,33 @@ using System.Text.RegularExpressions;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 using TestCase = Xunit.InlineDataAttribute;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json;
+using pyRevitLabs.Json;
 using System.IO;
 using System.Collections;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Bson;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Converters;
 #if !(NET20 || NET35)
 using System.Runtime.Serialization.Json;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.Linq;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Events;
-using Newtonsoft.Json.Tests.TestObjects.GeoCoding;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.Linq;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Events;
+using pyRevitLabs.Json.Tests.TestObjects.GeoCoding;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
 using System.Runtime.Serialization;
 using System.Globalization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Reflection;
 #if !NET20
 using System.Xml.Linq;
@@ -84,8 +84,8 @@ using System.Linq.Expressions;
 using System.Dynamic;
 #endif
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
-using Action = Newtonsoft.Json.Serialization.Action;
+using pyRevitLabs.Json.Utilities.LinqBridge;
+using Action = pyRevitLabs.Json.Serialization.Action;
 #else
 using System.Linq;
 #endif
@@ -94,7 +94,7 @@ using System.Drawing;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Serialization
+namespace pyRevitLabs.Json.Tests.Serialization
 {
     [TestFixture]
     public class JsonSerializerTest : TestFixtureBase
@@ -2005,7 +2005,7 @@ keyword such as type of business.""
         [Test]
         public void BadJsonPropertyClassSerialize()
         {
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.SerializeObject(new BadJsonPropertyClass()); }, @"A member with the name 'pie' already exists on 'Newtonsoft.Json.Tests.TestObjects.BadJsonPropertyClass'. Use the JsonPropertyAttribute to specify another name.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.SerializeObject(new BadJsonPropertyClass()); }, @"A member with the name 'pie' already exists on 'pyRevitLabs.Json.Tests.TestObjects.BadJsonPropertyClass'. Use the JsonPropertyAttribute to specify another name.");
         }
 
         [Test]
@@ -2588,7 +2588,7 @@ keyword such as type of business.""
             {
                 IncompatibleJsonAttributeClass c = new IncompatibleJsonAttributeClass();
                 JsonConvert.SerializeObject(c);
-            }, "Unexpected value when converting date. Expected DateTime or DateTimeOffset, got Newtonsoft.Json.Tests.TestObjects.IncompatibleJsonAttributeClass.");
+            }, "Unexpected value when converting date. Expected DateTime or DateTimeOffset, got pyRevitLabs.Json.Tests.TestObjects.IncompatibleJsonAttributeClass.");
         }
 
         [Test]
@@ -2882,7 +2882,7 @@ keyword such as type of business.""
             ExceptionAssert.Throws<JsonSerializationException>(() =>
             {
                 InterfacePropertyTestClass testFromDe = (InterfacePropertyTestClass)JsonConvert.DeserializeObject(strFromTest, typeof(InterfacePropertyTestClass));
-            }, @"Could not create an instance of type Newtonsoft.Json.Tests.TestObjects.ICo. Type is an interface or abstract class and cannot be instantiated. Path 'co.Name', line 1, position 14.");
+            }, @"Could not create an instance of type pyRevitLabs.Json.Tests.TestObjects.ICo. Type is an interface or abstract class and cannot be instantiated. Path 'co.Name', line 1, position 14.");
         }
 
         private Person GetPerson()
@@ -3421,7 +3421,7 @@ keyword such as type of business.""
         {
             string json = @"{""sublocation"":""AlertEmailSender.Program.Main"",""userId"":0,""type"":0,""summary"":""Loading settings variables"",""details"":null,""stackTrace"":""   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)\r\n   at System.Environment.get_StackTrace()\r\n   at mr.Logging.Event..ctor(String summary) in C:\\Projects\\MRUtils\\Logging\\Event.vb:line 71\r\n   at AlertEmailSender.Program.Main(String[] args) in C:\\Projects\\AlertEmailSender\\AlertEmailSender\\Program.cs:line 25"",""tag"":null,""time"":""\/Date(1249591032026-0400)\/""}";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Event>(json); }, @"Unable to find a constructor to use for type Newtonsoft.Json.Tests.TestObjects.Events.Event. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'sublocation', line 1, position 15.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Event>(json); }, @"Unable to find a constructor to use for type pyRevitLabs.Json.Tests.TestObjects.Events.Event. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'sublocation', line 1, position 15.");
         }
 
         [Test]
@@ -3460,7 +3460,7 @@ keyword such as type of business.""
         {
             string json = @"[]";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Person>(json); }, @"Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' because the type requires a JSON object (e.g. {""name"":""value""}) to deserialize correctly.
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Person>(json); }, @"Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' because the type requires a JSON object (e.g. {""name"":""value""}) to deserialize correctly.
 To fix this error either change the JSON to a JSON object (e.g. {""name"":""value""}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
 Path '', line 1, position 1.");
         }
@@ -3505,7 +3505,7 @@ Path '', line 1, position 1.");
 
             ExceptionAssert.Throws<JsonSerializationException>(
                 () => { JsonConvert.DeserializeObject<DynamicDictionary>(json); },
-                @"Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Newtonsoft.Json.Tests.Linq.DynamicDictionary' because the type requires a JSON object (e.g. {""name"":""value""}) to deserialize correctly.
+                @"Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'pyRevitLabs.Json.Tests.Linq.DynamicDictionary' because the type requires a JSON object (e.g. {""name"":""value""}) to deserialize correctly.
 To fix this error either change the JSON to a JSON object (e.g. {""name"":""value""}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
 Path '', line 1, position 1.");
         }
@@ -3518,7 +3518,7 @@ Path '', line 1, position 1.");
 
             ExceptionAssert.Throws<JsonSerializationException>(
                 () => { JsonConvert.DeserializeObject<JObject>(json); },
-                "Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 2.");
+                "Deserialized JSON type 'pyRevitLabs.Json.Linq.JArray' is not compatible with expected type 'pyRevitLabs.Json.Linq.JObject'. Path '', line 1, position 2.");
         }
 
         [Test]
@@ -3526,7 +3526,7 @@ Path '', line 1, position 1.");
         {
             string json = @"new Constructor(123)";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Person>(json); }, @"Error converting value ""Constructor"" to type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person'. Path '', line 1, position 16.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<Person>(json); }, @"Error converting value ""Constructor"" to type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person'. Path '', line 1, position 16.");
         }
 
         [Test]
@@ -3534,7 +3534,7 @@ Path '', line 1, position 1.");
         {
             string json = @"[new Constructor(123)]";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<List<Person>>(json); }, @"Error converting value ""Constructor"" to type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person'. Path '[0]', line 1, position 17.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.DeserializeObject<List<Person>>(json); }, @"Error converting value ""Constructor"" to type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person'. Path '[0]', line 1, position 17.");
         }
 
         [Test]
@@ -3549,7 +3549,7 @@ Path '', line 1, position 1.");
             }
             catch (JsonSerializationException ex)
             {
-                Assert.IsTrue(ex.Message.StartsWith(@"Cannot deserialize the current JSON object (e.g. {""name"":""value""}) into type 'System.Collections.Generic.List`1[Newtonsoft.Json.Tests.TestObjects.Organization.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly." + Environment.NewLine +
+                Assert.IsTrue(ex.Message.StartsWith(@"Cannot deserialize the current JSON object (e.g. {""name"":""value""}) into type 'System.Collections.Generic.List`1[pyRevitLabs.Json.Tests.TestObjects.Organization.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly." + Environment.NewLine +
                                                     @"To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object." + Environment.NewLine +
                                                     @"Path ''"));
             }
@@ -3560,7 +3560,7 @@ Path '', line 1, position 1.");
         {
             string json = @"[]";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.PopulateObject(json, new Person()); }, @"Cannot populate JSON array onto type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person'. Path '', line 1, position 1.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.PopulateObject(json, new Person()); }, @"Cannot populate JSON array onto type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person'. Path '', line 1, position 1.");
         }
 
         [Test]
@@ -3568,7 +3568,7 @@ Path '', line 1, position 1.");
         {
             string json = @"{}";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.PopulateObject(json, new List<Person>()); }, @"Cannot populate JSON object onto type 'System.Collections.Generic.List`1[Newtonsoft.Json.Tests.TestObjects.Organization.Person]'. Path '', line 1, position 2.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => { JsonConvert.PopulateObject(json, new List<Person>()); }, @"Cannot populate JSON object onto type 'System.Collections.Generic.List`1[pyRevitLabs.Json.Tests.TestObjects.Organization.Person]'. Path '', line 1, position 2.");
         }
 
         [Test]
@@ -3751,8 +3751,8 @@ Path '', line 1, position 1.");
             string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
 
             StringAssert.AreEqual(@"{
-  ""Newtonsoft.Json.Tests.TestObjects.Organization.Person"": 1,
-  ""Newtonsoft.Json.Tests.TestObjects.Organization.Person"": 2
+  ""pyRevitLabs.Json.Tests.TestObjects.Organization.Person"": 1,
+  ""pyRevitLabs.Json.Tests.TestObjects.Organization.Person"": 2
 }", json);
         }
 
@@ -3763,8 +3763,8 @@ Path '', line 1, position 1.");
             {
                 string json =
                     @"{
-  ""Newtonsoft.Json.Tests.TestObjects.Organization.Person"": 1,
-  ""Newtonsoft.Json.Tests.TestObjects.Organization.Person"": 2
+  ""pyRevitLabs.Json.Tests.TestObjects.Organization.Person"": 1,
+  ""pyRevitLabs.Json.Tests.TestObjects.Organization.Person"": 2
 }";
 
                 JsonConvert.DeserializeObject<Dictionary<Person, int>>(json);
@@ -3772,7 +3772,7 @@ Path '', line 1, position 1.");
             }
             catch (JsonSerializationException ex)
             {
-                Assert.IsTrue(ex.Message.StartsWith("Could not convert string 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' to dictionary key type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person'. Create a TypeConverter to convert from the string to the key type object. Path '['Newtonsoft.Json.Tests.TestObjects.Organization.Person']'"));
+                Assert.IsTrue(ex.Message.StartsWith("Could not convert string 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' to dictionary key type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person'. Create a TypeConverter to convert from the string to the key type object. Path '['pyRevitLabs.Json.Tests.TestObjects.Organization.Person']'"));
             }
         }
 
@@ -3965,7 +3965,7 @@ Path '', line 1, position 1.");
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.All,
                 MetadataPropertyHandling = MetadataPropertyHandling.Default
-            }), "Cannot preserve reference to readonly dictionary, or dictionary created from a non-default constructor: Newtonsoft.Json.Tests.TestObjects.DictionaryWithNoDefaultConstructor. Path 'key1', line 1, position 16.");
+            }), "Cannot preserve reference to readonly dictionary, or dictionary created from a non-default constructor: pyRevitLabs.Json.Tests.TestObjects.DictionaryWithNoDefaultConstructor. Path 'key1', line 1, position 16.");
         }
 
         [Test]
@@ -4149,7 +4149,7 @@ Path '', line 1, position 1.");
                     JsonTypeReflector.SetFullyTrusted(false);
 
                     JsonConvert.DeserializeObject<ISerializableTestObject>("{booleanValue:true}");
-                }, @"Type 'Newtonsoft.Json.Tests.TestObjects.ISerializableTestObject' implements ISerializable but cannot be deserialized using the ISerializable interface because the current application is not fully trusted and ISerializable can expose secure data." + Environment.NewLine +
+                }, @"Type 'pyRevitLabs.Json.Tests.TestObjects.ISerializableTestObject' implements ISerializable but cannot be deserialized using the ISerializable interface because the current application is not fully trusted and ISerializable can expose secure data." + Environment.NewLine +
                    @"To fix this error either change the environment to be fully trusted, change the application to not deserialize the type, add JsonObjectAttribute to the type or change the JsonSerializer setting ContractResolver to use a new DefaultContractResolver with IgnoreSerializableInterface set to true." + Environment.NewLine +
                    @"Path 'booleanValue', line 1, position 14.");
             }
@@ -4170,7 +4170,7 @@ Path '', line 1, position 1.");
                     ISerializableTestObject value = new ISerializableTestObject("string!", 0, default(DateTimeOffset), null);
 
                     JsonConvert.SerializeObject(value);
-                }, @"Type 'Newtonsoft.Json.Tests.TestObjects.ISerializableTestObject' implements ISerializable but cannot be serialized using the ISerializable interface because the current application is not fully trusted and ISerializable can expose secure data." + Environment.NewLine +
+                }, @"Type 'pyRevitLabs.Json.Tests.TestObjects.ISerializableTestObject' implements ISerializable but cannot be serialized using the ISerializable interface because the current application is not fully trusted and ISerializable can expose secure data." + Environment.NewLine +
                    @"To fix this error either change the environment to be fully trusted, change the application to not deserialize the type, add JsonObjectAttribute to the type or change the JsonSerializer setting ContractResolver to use a new DefaultContractResolver with IgnoreSerializableInterface set to true." + Environment.NewLine +
                    @"Path ''.");
             }
@@ -5160,7 +5160,7 @@ Path '', line 1, position 1.");
 
             string xml = Encoding.UTF8.GetString(ms.ToArray(), 0, Convert.ToInt32(ms.Length));
 
-            Assert.AreEqual(@"<ChildDataContract xmlns=""http://schemas.datacontract.org/2004/07/Newtonsoft.Json.Tests.TestObjects"" xmlns:i=""http://www.w3.org/2001/XMLSchema-instance""><nonVirtualMember>NonVirtualMember!</nonVirtualMember><virtualMember>VirtualMember!</virtualMember><NewMember i:nil=""true""/></ChildDataContract>", xml);
+            Assert.AreEqual(@"<ChildDataContract xmlns=""http://schemas.datacontract.org/2004/07/pyRevitLabs.Json.Tests.TestObjects"" xmlns:i=""http://www.w3.org/2001/XMLSchema-instance""><nonVirtualMember>NonVirtualMember!</nonVirtualMember><virtualMember>VirtualMember!</virtualMember><NewMember i:nil=""true""/></ChildDataContract>", xml);
         }
 #endif
 
@@ -5694,7 +5694,7 @@ Path '', line 1, position 1.");
   ""NullableInteger2"": null
 }";
 
-            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<ConvertableIntTestClass>(json), "Error converting value 1 to type 'Newtonsoft.Json.Tests.TestObjects.ConvertibleInt'. Path 'Integer', line 2, position 14.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<ConvertableIntTestClass>(json), "Error converting value 1 to type 'pyRevitLabs.Json.Tests.TestObjects.ConvertibleInt'. Path 'Integer', line 2, position 14.");
         }
 #endif
 
@@ -6149,7 +6149,7 @@ Path '', line 1, position 1.");
             string json = "{}";
             IList<string> errors = new List<string>();
 
-            EventHandler<Newtonsoft.Json.Serialization.ErrorEventArgs> error = (s, e) =>
+            EventHandler<pyRevitLabs.Json.Serialization.ErrorEventArgs> error = (s, e) =>
             {
                 errors.Add(e.ErrorContext.Error.Message);
                 e.ErrorContext.Handled = true;
@@ -6174,7 +6174,7 @@ Path '', line 1, position 1.");
             string json = "{'NonAttributeProperty':null,'UnsetProperty':null,'AllowNullProperty':null,'AlwaysProperty':null}";
             IList<string> errors = new List<string>();
 
-            EventHandler<Newtonsoft.Json.Serialization.ErrorEventArgs> error = (s, e) =>
+            EventHandler<pyRevitLabs.Json.Serialization.ErrorEventArgs> error = (s, e) =>
             {
                 errors.Add(e.ErrorContext.Error.Message);
                 e.ErrorContext.Handled = true;
@@ -6197,7 +6197,7 @@ Path '', line 1, position 1.");
         {
             IList<string> errors = new List<string>();
 
-            EventHandler<Newtonsoft.Json.Serialization.ErrorEventArgs> error = (s, e) =>
+            EventHandler<pyRevitLabs.Json.Serialization.ErrorEventArgs> error = (s, e) =>
             {
                 errors.Add(e.ErrorContext.Error.Message);
                 e.ErrorContext.Handled = true;
@@ -6829,7 +6829,7 @@ This is just junk, though.";
 #else
             ExceptionAssert.Throws<JsonSerializationException>(
                 doStuff,
-                "Unable to find a constructor to use for type Newtonsoft.Json.Tests.TestObjects.MyTuple`1[System.Int32]. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'm_Item1', line 1, position 11.");
+                "Unable to find a constructor to use for type pyRevitLabs.Json.Tests.TestObjects.MyTuple`1[System.Int32]. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'm_Item1', line 1, position 11.");
 #endif
         }
 
@@ -6845,7 +6845,7 @@ This is just junk, though.";
                 var json = JsonConvert.SerializeObject(tuple);
                 Assert.AreEqual(@"{""m_Item1"":500}", json);
 
-                ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<MyTuplePartial<int>>(json), "Unable to find a constructor to use for type Newtonsoft.Json.Tests.TestObjects.MyTuplePartial`1[System.Int32]. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'm_Item1', line 1, position 11.");
+                ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<MyTuplePartial<int>>(json), "Unable to find a constructor to use for type pyRevitLabs.Json.Tests.TestObjects.MyTuplePartial`1[System.Int32]. A class should either have a default constructor, one constructor with arguments or a constructor marked with the JsonConstructor attribute. Path 'm_Item1', line 1, position 11.");
             }
             finally
             {
@@ -7039,14 +7039,14 @@ This is just junk, though.";
         [Test]
         public void NoConstructorReadOnlyCollectionTest()
         {
-            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<NoConstructorReadOnlyCollection<int>>("[1]"), "Cannot deserialize readonly or fixed size list: Newtonsoft.Json.Tests.TestObjects.NoConstructorReadOnlyCollection`1[System.Int32]. Path '', line 1, position 1.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<NoConstructorReadOnlyCollection<int>>("[1]"), "Cannot deserialize readonly or fixed size list: pyRevitLabs.Json.Tests.TestObjects.NoConstructorReadOnlyCollection`1[System.Int32]. Path '', line 1, position 1.");
         }
 
 #if !(NET40 || NET35 || NET20 || PORTABLE40)
         [Test]
         public void NoConstructorReadOnlyDictionaryTest()
         {
-            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<NoConstructorReadOnlyDictionary<int, int>>("{'1':1}"), "Cannot deserialize readonly or fixed size dictionary: Newtonsoft.Json.Tests.TestObjects.NoConstructorReadOnlyDictionary`2[System.Int32,System.Int32]. Path '1', line 1, position 5.");
+            ExceptionAssert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<NoConstructorReadOnlyDictionary<int, int>>("{'1':1}"), "Cannot deserialize readonly or fixed size dictionary: pyRevitLabs.Json.Tests.TestObjects.NoConstructorReadOnlyDictionary`2[System.Int32,System.Int32]. Path '1', line 1, position 5.");
         }
 #endif
 
@@ -7805,7 +7805,7 @@ This is just junk, though.";
         [Test]
         public void ErrorCreatingJsonConverter()
         {
-            ExceptionAssert.Throws<JsonException>(() => JsonConvert.SerializeObject(new ErroringTestClass()), "Error creating 'Newtonsoft.Json.Tests.TestObjects.ErroringJsonConverter'.");
+            ExceptionAssert.Throws<JsonException>(() => JsonConvert.SerializeObject(new ErroringTestClass()), "Error creating 'pyRevitLabs.Json.Tests.TestObjects.ErroringJsonConverter'.");
         }
 
         [Test]

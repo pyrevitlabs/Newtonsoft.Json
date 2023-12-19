@@ -29,26 +29,26 @@ using System.Collections.Generic;
 using System.Numerics;
 #endif
 using System.Text;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Converters;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 using TestCase = Xunit.InlineDataAttribute;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 using System.IO;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Linq
+namespace pyRevitLabs.Json.Tests.Linq
 {
     [TestFixture]
     public class JTokenTests : TestFixtureBase
@@ -994,7 +994,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JArray a = new JArray();
                 a.Add(new JProperty("PropertyName"));
-            }, "Can not add Newtonsoft.Json.Linq.JProperty to Newtonsoft.Json.Linq.JArray.");
+            }, "Can not add pyRevitLabs.Json.Linq.JProperty to pyRevitLabs.Json.Linq.JArray.");
         }
 
         [Test]
@@ -1004,7 +1004,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JObject o = new JObject();
                 o.Add(5);
-            }, "Can not add Newtonsoft.Json.Linq.JValue to Newtonsoft.Json.Linq.JObject.");
+            }, "Can not add pyRevitLabs.Json.Linq.JValue to pyRevitLabs.Json.Linq.JObject.");
         }
 
         [Test]

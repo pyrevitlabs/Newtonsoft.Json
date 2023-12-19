@@ -25,17 +25,17 @@
 
 using System;
 using System.IO;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Converters;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Converters
+namespace pyRevitLabs.Json.Tests.Converters
 {
     public class VersionClass
     {

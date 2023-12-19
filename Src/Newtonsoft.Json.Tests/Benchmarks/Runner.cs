@@ -35,13 +35,13 @@ using BenchmarkDotNet.Running;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Benchmarks
+namespace pyRevitLabs.Json.Tests.Benchmarks
 {
     [TestFixture]
     public class Runner : TestFixtureBase

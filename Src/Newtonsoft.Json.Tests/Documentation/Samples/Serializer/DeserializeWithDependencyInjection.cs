@@ -31,20 +31,20 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Serialization;
 using Autofac;
 using Autofac.Core;
 using Autofac.Core.Activators.Reflection;
-using Newtonsoft.Json.Tests.Serialization;
-using LogService = Newtonsoft.Json.Tests.Serialization.LogManager;
+using pyRevitLabs.Json.Tests.Serialization;
+using LogService = pyRevitLabs.Json.Tests.Serialization.LogManager;
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Serializer
 {
     [TestFixture]
     public class DeserializeWithDependencyInjection : TestFixtureBase

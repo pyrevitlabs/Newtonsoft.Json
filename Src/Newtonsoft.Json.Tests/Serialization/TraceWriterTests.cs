@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 #if !(NET20 || NET35 || PORTABLE || PORTABLE40) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System.Numerics;
 #endif
@@ -13,17 +13,17 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Utilities;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
@@ -32,7 +32,7 @@ using System.Linq;
 using System.Threading.Tasks;
 #endif
 
-namespace Newtonsoft.Json.Tests.Serialization
+namespace pyRevitLabs.Json.Tests.Serialization
 { 
     public class Staff
     {
@@ -140,10 +140,10 @@ namespace Newtonsoft.Json.Tests.Serialization
                 traceWriter.Trace(TraceLevel.Error, "Error!", null);
                 traceWriter.Trace(TraceLevel.Off, "Off!", null);
 
-                StringAssert.AreEqual(@"Newtonsoft.Json Verbose: 0 : Verbose!
-Newtonsoft.Json Information: 0 : Info!
-Newtonsoft.Json Warning: 0 : Warning!
-Newtonsoft.Json Error: 0 : Error!
+                StringAssert.AreEqual(@"pyRevitLabs.Json Verbose: 0 : Verbose!
+pyRevitLabs.Json Information: 0 : Info!
+pyRevitLabs.Json Warning: 0 : Warning!
+pyRevitLabs.Json Error: 0 : Error!
 ", sw.ToString());
             }
             finally
@@ -291,12 +291,12 @@ Newtonsoft.Json Error: 0 : Error!
                 staff,
                 new JsonSerializerSettings { TraceWriter = traceWriter, Converters = { new JavaScriptDateTimeConverter() } });
 
-            // 2012-11-11T12:08:42.761 Info Started serializing Newtonsoft.Json.Tests.Serialization.Staff. Path ''.
-            // 2012-11-11T12:08:42.785 Info Started serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
-            // 2012-11-11T12:08:42.791 Info Finished serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
+            // 2012-11-11T12:08:42.761 Info Started serializing pyRevitLabs.Json.Tests.Serialization.Staff. Path ''.
+            // 2012-11-11T12:08:42.785 Info Started serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
+            // 2012-11-11T12:08:42.791 Info Finished serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
             // 2012-11-11T12:08:42.797 Info Started serializing System.Collections.Generic.List`1[System.String]. Path 'Roles'.
             // 2012-11-11T12:08:42.798 Info Finished serializing System.Collections.Generic.List`1[System.String]. Path 'Roles'.
-            // 2012-11-11T12:08:42.799 Info Finished serializing Newtonsoft.Json.Tests.Serialization.Staff. Path ''.
+            // 2012-11-11T12:08:42.799 Info Finished serializing pyRevitLabs.Json.Tests.Serialization.Staff. Path ''.
 
             MemoryTraceWriter memoryTraceWriter = (MemoryTraceWriter)traceWriter;
             string output = memoryTraceWriter.ToString();
@@ -350,12 +350,12 @@ Newtonsoft.Json Error: 0 : Error!
                     MetadataPropertyHandling = MetadataPropertyHandling.Default
                 });
 
-            // 2012-11-11T12:08:42.761 Info Started serializing Newtonsoft.Json.Tests.Serialization.Staff. Path ''.
-            // 2012-11-11T12:08:42.785 Info Started serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
-            // 2012-11-11T12:08:42.791 Info Finished serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
+            // 2012-11-11T12:08:42.761 Info Started serializing pyRevitLabs.Json.Tests.Serialization.Staff. Path ''.
+            // 2012-11-11T12:08:42.785 Info Started serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
+            // 2012-11-11T12:08:42.791 Info Finished serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path 'StartDate'.
             // 2012-11-11T12:08:42.797 Info Started serializing System.Collections.Generic.List`1[System.String]. Path 'Roles'.
             // 2012-11-11T12:08:42.798 Info Finished serializing System.Collections.Generic.List`1[System.String]. Path 'Roles'.
-            // 2012-11-11T12:08:42.799 Info Finished serializing Newtonsoft.Json.Tests.Serialization.Staff. Path ''.
+            // 2012-11-11T12:08:42.799 Info Finished serializing pyRevitLabs.Json.Tests.Serialization.Staff. Path ''.
             // 2013-05-19T00:07:24.360 Verbose Deserialized JSON: 
             // {
             //   "Name": "Arnie Admin",
@@ -484,16 +484,16 @@ Newtonsoft.Json Error: 0 : Error!
                         Formatting = Formatting.Indented
                     });
 
-            Assert.AreEqual("Started serializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path ''.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Started serializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path ''.", traceWriter.TraceRecords[0].Message);
             Assert.AreEqual("Started serializing System.Collections.Generic.List`1[System.Int32]. Path 'IntList'.", traceWriter.TraceRecords[1].Message);
             Assert.AreEqual("Finished serializing System.Collections.Generic.List`1[System.Int32]. Path 'IntList'.", traceWriter.TraceRecords[2].Message);
             Assert.AreEqual("Started serializing System.String[]. Path 'StringArray'.", traceWriter.TraceRecords[3].Message);
             Assert.AreEqual("Finished serializing System.String[]. Path 'StringArray'.", traceWriter.TraceRecords[4].Message);
-            Assert.AreEqual("Started serializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'.", traceWriter.TraceRecords[5].Message);
-            Assert.AreEqual("Finished serializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'.", traceWriter.TraceRecords[6].Message);
+            Assert.AreEqual("Started serializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'.", traceWriter.TraceRecords[5].Message);
+            Assert.AreEqual("Finished serializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'.", traceWriter.TraceRecords[6].Message);
             Assert.AreEqual("Started serializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path 'StringDictionary'.", traceWriter.TraceRecords[7].Message);
             Assert.AreEqual("Finished serializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path 'StringDictionary'.", traceWriter.TraceRecords[8].Message);
-            Assert.AreEqual("Finished serializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path ''.", traceWriter.TraceRecords[9].Message);
+            Assert.AreEqual("Finished serializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path ''.", traceWriter.TraceRecords[9].Message);
 
             Assert.IsFalse(traceWriter.TraceRecords.Any(r => r.Level == TraceLevel.Verbose));
         }
@@ -543,17 +543,17 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual(3, o2.StringDictionary.Count);
             Assert.AreEqual(1.1d, o2.Double);
 
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 2, position 12.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 2, position 12.", traceWriter.TraceRecords[0].Message);
             Assert.AreEqual("Started deserializing System.Collections.Generic.IList`1[System.Int32]. Path 'IntList', line 2, position 14.", traceWriter.TraceRecords[1].Message);
             Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Finished deserializing System.Collections.Generic.IList`1[System.Int32]. Path 'IntList'"));
             Assert.AreEqual("Started deserializing System.String[]. Path 'StringArray', line 6, position 18.", traceWriter.TraceRecords[3].Message);
             Assert.IsTrue(traceWriter.TraceRecords[4].Message.StartsWith("Finished deserializing System.String[]. Path 'StringArray'"));
-            Assert.AreEqual("Deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Version.Major', line 11, position 12.", traceWriter.TraceRecords[5].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[6].Message.StartsWith("Started deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
-            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
+            Assert.AreEqual("Deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Version.Major', line 11, position 12.", traceWriter.TraceRecords[5].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[6].Message.StartsWith("Started deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
+            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
             Assert.AreEqual("Started deserializing System.Collections.Generic.IDictionary`2[System.String,System.String]. Path 'StringDictionary.1', line 19, position 8.", traceWriter.TraceRecords[8].Message);
             Assert.IsTrue(traceWriter.TraceRecords[9].Message.StartsWith("Finished deserializing System.Collections.Generic.IDictionary`2[System.String,System.String]. Path 'StringDictionary'"));
-            Assert.IsTrue(traceWriter.TraceRecords[10].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path ''"));
+            Assert.IsTrue(traceWriter.TraceRecords[10].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path ''"));
 
             Assert.IsFalse(traceWriter.TraceRecords.Any(r => r.Level == TraceLevel.Verbose));
         }
@@ -606,17 +606,17 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual(3, o2.StringDictionary.Count);
             Assert.AreEqual(1.1d, o2.Double);
 
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 2, position 12.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 2, position 12.", traceWriter.TraceRecords[0].Message);
             Assert.AreEqual("Started deserializing System.Collections.Generic.IList`1[System.Int32]. Path 'IntList', line 2, position 14.", traceWriter.TraceRecords[1].Message);
             Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Finished deserializing System.Collections.Generic.IList`1[System.Int32]. Path 'IntList'"));
             Assert.AreEqual("Started deserializing System.String[]. Path 'StringArray', line 6, position 18.", traceWriter.TraceRecords[3].Message);
             Assert.IsTrue(traceWriter.TraceRecords[4].Message.StartsWith("Finished deserializing System.String[]. Path 'StringArray'"));
-            Assert.AreEqual("Deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Version.Major', line 11, position 12.", traceWriter.TraceRecords[5].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[6].Message.StartsWith("Started deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
-            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
+            Assert.AreEqual("Deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Version.Major', line 11, position 12.", traceWriter.TraceRecords[5].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[6].Message.StartsWith("Started deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
+            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'Version'"));
             Assert.AreEqual("Started deserializing System.Collections.Generic.IDictionary`2[System.String,System.String]. Path 'StringDictionary.1', line 19, position 8.", traceWriter.TraceRecords[8].Message);
             Assert.IsTrue(traceWriter.TraceRecords[9].Message.StartsWith("Finished deserializing System.Collections.Generic.IDictionary`2[System.String,System.String]. Path 'StringDictionary'"));
-            Assert.IsTrue(traceWriter.TraceRecords[10].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path ''"));
+            Assert.IsTrue(traceWriter.TraceRecords[10].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path ''"));
 
             Assert.IsFalse(traceWriter.TraceRecords.Any(r => r.Level == TraceLevel.Verbose));
         }
@@ -644,10 +644,10 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual(2, traceWriter.TraceRecords.Count);
 
             Assert.AreEqual(TraceLevel.Info, traceWriter.TraceRecords[0].Level);
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.IntegerTestClass. Path 'Integer', line 1, position 11.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.IntegerTestClass. Path 'Integer', line 1, position 11.", traceWriter.TraceRecords[0].Message);
 
             Assert.AreEqual(TraceLevel.Error, traceWriter.TraceRecords[1].Level);
-            Assert.AreEqual("Error deserializing Newtonsoft.Json.Tests.Serialization.IntegerTestClass. Could not convert string to integer: hi. Path 'Integer', line 1, position 15.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("Error deserializing pyRevitLabs.Json.Tests.Serialization.IntegerTestClass. Could not convert string to integer: hi. Path 'Integer', line 1, position 15.", traceWriter.TraceRecords[1].Message);
         }
 
         [Test]
@@ -673,7 +673,7 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual(3, traceWriter.TraceRecords.Count);
 
             Assert.AreEqual(TraceLevel.Info, traceWriter.TraceRecords[0].Level);
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 1, position 11.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.TraceTestObject. Path 'IntList', line 1, position 11.", traceWriter.TraceRecords[0].Message);
 
             Assert.AreEqual(TraceLevel.Info, traceWriter.TraceRecords[1].Level);
             Assert.AreEqual("Started deserializing System.Collections.Generic.IList`1[System.Int32]. Path 'IntList', line 1, position 12.", traceWriter.TraceRecords[1].Message);
@@ -703,9 +703,9 @@ Newtonsoft.Json Error: 0 : Error!
                     TraceWriter = traceWriter
                 });
 
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference Id '1' for Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path ''."));
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference Id '2' for Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other'."));
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference to Id '1' for Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'self'."));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference Id '1' for pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path ''."));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference Id '2' for pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other'."));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Writing object reference to Id '1' for pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'self'."));
         }
 
         [Test]
@@ -735,9 +735,9 @@ Newtonsoft.Json Error: 0 : Error!
                     TraceWriter = traceWriter
                 });
 
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Read object reference Id '1' for Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other', line 3, position 10."));
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Read object reference Id '2' for Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other.blah', line 5, position 11."));
-            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message.StartsWith("Resolved object reference '1' to Newtonsoft.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'self'")));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Read object reference Id '1' for pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other', line 3, position 10."));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message == "Read object reference Id '2' for pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'other.blah', line 5, position 11."));
+            Assert.IsTrue(traceWriter.TraceRecords.Any(r => r.Message.StartsWith("Resolved object reference '1' to pyRevitLabs.Json.Tests.Serialization.PreserveReferencesHandlingTests+CircularDictionary. Path 'self'")));
         }
 
         [Test]
@@ -765,9 +765,9 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual("Started serializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values'.", traceWriter.TraceRecords[2].Message);
             Assert.AreEqual("Writing type name '" + ReflectionUtils.GetTypeName(typeof(Dictionary<string, string>), 0, DefaultSerializationBinder.Instance) + "' for System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values[0]'.", traceWriter.TraceRecords[3].Message);
             Assert.AreEqual("Finished serializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values[0]'.", traceWriter.TraceRecords[4].Message);
-            Assert.AreEqual("Started serializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[0]'.", traceWriter.TraceRecords[5].Message);
-            Assert.AreEqual("Writing type name '" + ReflectionUtils.GetTypeName(typeof(VersionOld), 0, DefaultSerializationBinder.Instance) + "' for Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[1]'.", traceWriter.TraceRecords[6].Message);
-            Assert.AreEqual("Finished serializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[1]'.", traceWriter.TraceRecords[7].Message);
+            Assert.AreEqual("Started serializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[0]'.", traceWriter.TraceRecords[5].Message);
+            Assert.AreEqual("Writing type name '" + ReflectionUtils.GetTypeName(typeof(VersionOld), 0, DefaultSerializationBinder.Instance) + "' for pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[1]'.", traceWriter.TraceRecords[6].Message);
+            Assert.AreEqual("Finished serializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[1]'.", traceWriter.TraceRecords[7].Message);
             Assert.AreEqual("Finished serializing System.Collections.Generic.List`1[System.Object]. Path ''.", traceWriter.TraceRecords[8].Message);
         }
 
@@ -791,8 +791,8 @@ Newtonsoft.Json Error: 0 : Error!
             });
 
             Assert.AreEqual("Started serializing System.Collections.Generic.List`1[System.DateTime]. Path ''.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("Started serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path ''.", traceWriter.TraceRecords[1].Message);
-            Assert.AreEqual("Finished serializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path '[0]'.", traceWriter.TraceRecords[2].Message);
+            Assert.AreEqual("Started serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path ''.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("Finished serializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path '[0]'.", traceWriter.TraceRecords[2].Message);
             Assert.AreEqual("Finished serializing System.Collections.Generic.List`1[System.DateTime]. Path ''.", traceWriter.TraceRecords[3].Message);
         }
 
@@ -816,8 +816,8 @@ Newtonsoft.Json Error: 0 : Error!
                 });
 
             Assert.AreEqual("Started deserializing System.Collections.Generic.List`1[System.DateTime]. Path '', line 1, position 1.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("Started deserializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path '[0]', line 1, position 10.", traceWriter.TraceRecords[1].Message);
-            Assert.AreEqual("Finished deserializing System.DateTime with converter Newtonsoft.Json.Converters.JavaScriptDateTimeConverter. Path '[0]', line 1, position 23.", traceWriter.TraceRecords[2].Message);
+            Assert.AreEqual("Started deserializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path '[0]', line 1, position 10.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("Finished deserializing System.DateTime with converter pyRevitLabs.Json.Converters.JavaScriptDateTimeConverter. Path '[0]', line 1, position 23.", traceWriter.TraceRecords[2].Message);
             Assert.AreEqual("Finished deserializing System.Collections.Generic.List`1[System.DateTime]. Path '', line 1, position 24.", traceWriter.TraceRecords[3].Message);
         }
 
@@ -837,7 +837,7 @@ Newtonsoft.Json Error: 0 : Error!
       ""key!"": ""value!""
     },
     {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.VersionOld, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.VersionOld, pyRevitLabs.Json.Tests"",
       ""Major"": 1,
       ""Minor"": 2,
       ""Build"": 3,
@@ -860,10 +860,10 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.AreEqual("Resolved type 'System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String, mscorlib]], mscorlib' to System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values[0].$type', line 5, position 119.", traceWriter.TraceRecords[2].Message);
             Assert.AreEqual("Started deserializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values[0].key!', line 6, position 13.", traceWriter.TraceRecords[3].Message);
             Assert.IsTrue(traceWriter.TraceRecords[4].Message.StartsWith("Finished deserializing System.Collections.Generic.Dictionary`2[System.String,System.String]. Path '$values[0]'"));
-            Assert.AreEqual("Resolved type 'Newtonsoft.Json.Tests.TestObjects.VersionOld, Newtonsoft.Json.Tests' to Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[1].$type', line 9, position 84.", traceWriter.TraceRecords[5].Message);
-            Assert.AreEqual("Deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path '$values[1].Major', line 10, position 14.", traceWriter.TraceRecords[6].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Started deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[1]'"));
-            Assert.IsTrue(traceWriter.TraceRecords[8].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path '$values[1]'"));
+            Assert.AreEqual("Resolved type 'pyRevitLabs.Json.Tests.TestObjects.VersionOld, pyRevitLabs.Json.Tests' to pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[1].$type', line 9, position 84.", traceWriter.TraceRecords[5].Message);
+            Assert.AreEqual("Deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path '$values[1].Major', line 10, position 14.", traceWriter.TraceRecords[6].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[7].Message.StartsWith("Started deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[1]'"));
+            Assert.IsTrue(traceWriter.TraceRecords[8].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path '$values[1]'"));
             Assert.IsTrue(traceWriter.TraceRecords[9].Message.StartsWith("Finished deserializing System.Collections.Generic.List`1[System.Object]. Path '$values'"));
         }
 
@@ -916,9 +916,9 @@ Newtonsoft.Json Error: 0 : Error!
                     TraceWriter = traceWriter
                 });
 
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.TestObjects.Organization.Person. Path 'MissingMemberProperty', line 1, position 25.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("Could not find member 'MissingMemberProperty' on Newtonsoft.Json.Tests.TestObjects.Organization.Person. Path 'MissingMemberProperty', line 1, position 25.", traceWriter.TraceRecords[1].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.TestObjects.Organization.Person. Path ''"));
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.TestObjects.Organization.Person. Path 'MissingMemberProperty', line 1, position 25.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Could not find member 'MissingMemberProperty' on pyRevitLabs.Json.Tests.TestObjects.Organization.Person. Path 'MissingMemberProperty', line 1, position 25.", traceWriter.TraceRecords[1].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.TestObjects.Organization.Person. Path ''"));
         }
 
         [Test]
@@ -944,10 +944,10 @@ Newtonsoft.Json Error: 0 : Error!
                 TraceWriter = traceWriter
             });
 
-            Assert.AreEqual("Deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Major', line 2, position 10.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("Could not find member 'MissingMemberProperty' on Newtonsoft.Json.Tests.TestObjects.VersionOld. Path 'MissingMemberProperty', line 8, position 31.", traceWriter.TraceRecords[1].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Started deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path ''"));
-            Assert.IsTrue(traceWriter.TraceRecords[3].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.TestObjects.VersionOld. Path ''"));
+            Assert.AreEqual("Deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld using creator with parameters: Major, Minor, Build, Revision. Path 'Major', line 2, position 10.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Could not find member 'MissingMemberProperty' on pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path 'MissingMemberProperty', line 8, position 31.", traceWriter.TraceRecords[1].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[2].Message.StartsWith("Started deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path ''"));
+            Assert.IsTrue(traceWriter.TraceRecords[3].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.TestObjects.VersionOld. Path ''"));
         }
 
         [Test]
@@ -968,7 +968,7 @@ Newtonsoft.Json Error: 0 : Error!
             Assert.IsNotNull(c);
             Assert.AreEqual(1, c.Name);
 
-            Assert.AreEqual("Deserializing Newtonsoft.Json.Tests.TestObjects.PublicParameterizedConstructorWithPropertyNameConflictWithAttribute using creator with parameters: name. Path 'name', line 1, position 6.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("Deserializing pyRevitLabs.Json.Tests.TestObjects.PublicParameterizedConstructorWithPropertyNameConflictWithAttribute using creator with parameters: name. Path 'name', line 1, position 6.", traceWriter.TraceRecords[0].Message);
         }
 
         [Test]
@@ -986,7 +986,7 @@ Newtonsoft.Json Error: 0 : Error!
 
             JsonConvert.SerializeObject(c, new JsonSerializerSettings { TraceWriter = traceWriter });
 
-            Assert.AreEqual("ShouldSerialize result for property 'Name' on Newtonsoft.Json.Tests.Serialization.ShouldSerializeTestClass: True. Path ''.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("ShouldSerialize result for property 'Name' on pyRevitLabs.Json.Tests.Serialization.ShouldSerializeTestClass: True. Path ''.", traceWriter.TraceRecords[1].Message);
             Assert.AreEqual(TraceLevel.Verbose, traceWriter.TraceRecords[1].Level);
 
             traceWriter = new InMemoryTraceWriter
@@ -998,7 +998,7 @@ Newtonsoft.Json Error: 0 : Error!
 
             JsonConvert.SerializeObject(c, new JsonSerializerSettings { TraceWriter = traceWriter });
 
-            Assert.AreEqual("ShouldSerialize result for property 'Name' on Newtonsoft.Json.Tests.Serialization.ShouldSerializeTestClass: False. Path ''.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("ShouldSerialize result for property 'Name' on pyRevitLabs.Json.Tests.Serialization.ShouldSerializeTestClass: False. Path ''.", traceWriter.TraceRecords[1].Message);
             Assert.AreEqual(TraceLevel.Verbose, traceWriter.TraceRecords[1].Level);
         }
 
@@ -1017,12 +1017,12 @@ Newtonsoft.Json Error: 0 : Error!
 
             string json = JsonConvert.SerializeObject(c, Formatting.Indented, new JsonSerializerSettings { TraceWriter = traceWriter });
 
-            Assert.AreEqual("Started serializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path ''.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("IsSpecified result for property 'Name' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass: False. Path ''.", traceWriter.TraceRecords[1].Message);
-            Assert.AreEqual("IsSpecified result for property 'Weight' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[2].Message);
-            Assert.AreEqual("IsSpecified result for property 'Height' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[3].Message);
-            Assert.AreEqual("IsSpecified result for property 'FavoriteNumber' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[4].Message);
-            Assert.AreEqual("Finished serializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path ''.", traceWriter.TraceRecords[5].Message);
+            Assert.AreEqual("Started serializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path ''.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("IsSpecified result for property 'Name' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass: False. Path ''.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("IsSpecified result for property 'Weight' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[2].Message);
+            Assert.AreEqual("IsSpecified result for property 'Height' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[3].Message);
+            Assert.AreEqual("IsSpecified result for property 'FavoriteNumber' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass: False. Path 'Age'.", traceWriter.TraceRecords[4].Message);
+            Assert.AreEqual("Finished serializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path ''.", traceWriter.TraceRecords[5].Message);
 
             StringAssert.AreEqual(@"{
   ""Age"": 27
@@ -1035,8 +1035,8 @@ Newtonsoft.Json Error: 0 : Error!
 
             SpecifiedTestClass deserialized = JsonConvert.DeserializeObject<SpecifiedTestClass>(json, new JsonSerializerSettings { TraceWriter = traceWriter });
 
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path 'Age', line 2, position 8.", traceWriter.TraceRecords[0].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[1].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path ''"));
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path 'Age', line 2, position 8.", traceWriter.TraceRecords[0].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[1].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path ''"));
 
             Assert.IsNull(deserialized.Name);
             Assert.IsFalse(deserialized.NameSpecified);
@@ -1066,11 +1066,11 @@ Newtonsoft.Json Error: 0 : Error!
 
             deserialized = JsonConvert.DeserializeObject<SpecifiedTestClass>(json, new JsonSerializerSettings { TraceWriter = traceWriter });
 
-            Assert.AreEqual("Started deserializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path 'Name', line 2, position 9.", traceWriter.TraceRecords[0].Message);
-            Assert.AreEqual("IsSpecified for property 'Name' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Name', line 2, position 17.", traceWriter.TraceRecords[1].Message);
-            Assert.AreEqual("IsSpecified for property 'Weight' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Weight', line 4, position 13.", traceWriter.TraceRecords[2].Message);
-            Assert.AreEqual("IsSpecified for property 'Height' on Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Height', line 5, position 13.", traceWriter.TraceRecords[3].Message);
-            Assert.IsTrue(traceWriter.TraceRecords[4].Message.StartsWith("Finished deserializing Newtonsoft.Json.Tests.Serialization.SpecifiedTestClass. Path ''"));
+            Assert.AreEqual("Started deserializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path 'Name', line 2, position 9.", traceWriter.TraceRecords[0].Message);
+            Assert.AreEqual("IsSpecified for property 'Name' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Name', line 2, position 17.", traceWriter.TraceRecords[1].Message);
+            Assert.AreEqual("IsSpecified for property 'Weight' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Weight', line 4, position 13.", traceWriter.TraceRecords[2].Message);
+            Assert.AreEqual("IsSpecified for property 'Height' on pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass set to true. Path 'Height', line 5, position 13.", traceWriter.TraceRecords[3].Message);
+            Assert.IsTrue(traceWriter.TraceRecords[4].Message.StartsWith("Finished deserializing pyRevitLabs.Json.Tests.Serialization.SpecifiedTestClass. Path ''"));
 
             Assert.AreEqual("James", deserialized.Name);
             Assert.IsTrue(deserialized.NameSpecified);

@@ -26,9 +26,9 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
     public class PersonError
     {

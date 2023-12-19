@@ -28,15 +28,15 @@ using System;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Schema;
+using pyRevitLabs.Json.Schema;
 using System.IO;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 
-namespace Newtonsoft.Json.Tests.Schema
+namespace pyRevitLabs.Json.Tests.Schema
 {
     [TestFixture]
     public class JsonSchemaBuilderTests : TestFixtureBase

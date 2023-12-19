@@ -24,11 +24,11 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace pyRevitLabs.Json.Schema
 {
     /// <summary>
     /// <para>

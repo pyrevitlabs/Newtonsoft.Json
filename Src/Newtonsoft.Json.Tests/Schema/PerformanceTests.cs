@@ -29,17 +29,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Newtonsoft.Json.Schema;
+using pyRevitLabs.Json.Schema;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Schema
+namespace pyRevitLabs.Json.Tests.Schema
 {
     [TestFixture]
     public class PerformanceTests : TestFixtureBase

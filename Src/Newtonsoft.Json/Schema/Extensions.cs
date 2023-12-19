@@ -25,12 +25,12 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace pyRevitLabs.Json.Schema
 {
     /// <summary>
     /// <para>

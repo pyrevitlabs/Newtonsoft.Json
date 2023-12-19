@@ -32,17 +32,17 @@ using System.Reflection;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
-using Newtonsoft.Json.Tests.Serialization;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Utilities;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Tests.Serialization;
 
-namespace Newtonsoft.Json.Tests.Utilities
+namespace pyRevitLabs.Json.Tests.Utilities
 {
     [TestFixture]
     public class ExpressionReflectionDelegateFactoryTests : TestFixtureBase
@@ -182,7 +182,7 @@ namespace Newtonsoft.Json.Tests.Utilities
 
             Movie m = new Movie();
             object result = method(m);
-            Assert.AreEqual("Newtonsoft.Json.Tests.TestObjects.Movie", result);
+            Assert.AreEqual("pyRevitLabs.Json.Tests.TestObjects.Movie", result);
 
             method = ExpressionReflectionDelegateFactory.Instance.CreateMethodCall<object>(TestReflectionUtils.GetMethod(typeof(Movie), "Equals"));
 
@@ -323,7 +323,7 @@ namespace Newtonsoft.Json.Tests.Utilities
                 },
                 new[]
                 {
-                    "Unable to cast object of type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' to type 'Newtonsoft.Json.Tests.TestObjects.Movie'.",
+                    "Unable to cast object of type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' to type 'pyRevitLabs.Json.Tests.TestObjects.Movie'.",
                     "Cannot cast from source type to destination type." // mono
                 });
         }
@@ -349,7 +349,7 @@ namespace Newtonsoft.Json.Tests.Utilities
                 },
                 new[]
                 {
-                    "Unable to cast object of type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' to type 'Newtonsoft.Json.Tests.TestObjects.Movie'.",
+                    "Unable to cast object of type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' to type 'pyRevitLabs.Json.Tests.TestObjects.Movie'.",
                     "Cannot cast from source type to destination type." // mono
                 });
         }

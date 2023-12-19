@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Linq.JsonPath
+namespace pyRevitLabs.Json.Linq.JsonPath
 {
     internal class ArraySliceFilter : PathFilter
     {

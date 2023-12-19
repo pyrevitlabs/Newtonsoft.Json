@@ -25,9 +25,9 @@
 
 using System;
 using System.Reflection;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Converters
+namespace pyRevitLabs.Json.Converters
 {
     /// <summary>
     /// Creates a custom object.

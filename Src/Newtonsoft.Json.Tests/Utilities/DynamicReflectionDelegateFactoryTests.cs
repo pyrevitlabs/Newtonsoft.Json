@@ -30,22 +30,22 @@ using System.Reflection;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
-using Newtonsoft.Json.Tests.Serialization;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Utilities;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Tests.Serialization;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 
-namespace Newtonsoft.Json.Tests.Utilities
+namespace pyRevitLabs.Json.Tests.Utilities
 {
     [TestFixture]
     public class DynamicReflectionDelegateFactoryTests : TestFixtureBase
@@ -130,7 +130,7 @@ namespace Newtonsoft.Json.Tests.Utilities
                 var setter = DynamicReflectionDelegateFactory.Instance.CreateGet<object>(typeof(Movie).GetProperty("Name"));
 
                 setter(p);
-            }, "Unable to cast object of type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' to type 'Newtonsoft.Json.Tests.TestObjects.Movie'.");
+            }, "Unable to cast object of type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' to type 'pyRevitLabs.Json.Tests.TestObjects.Movie'.");
         }
 
         [Test]
@@ -150,7 +150,7 @@ namespace Newtonsoft.Json.Tests.Utilities
                 setter(p, "Hi");
 
                 Assert.AreEqual(p.Name, "Hi");
-            }, "Unable to cast object of type 'Newtonsoft.Json.Tests.TestObjects.Organization.Person' to type 'Newtonsoft.Json.Tests.TestObjects.Movie'.");
+            }, "Unable to cast object of type 'pyRevitLabs.Json.Tests.TestObjects.Organization.Person' to type 'pyRevitLabs.Json.Tests.TestObjects.Movie'.");
         }
 
         [Test]

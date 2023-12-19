@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects;
 #if !(NET20 || NET35 || PORTABLE) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System.Numerics;
 #endif
@@ -35,20 +35,20 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 using System.Globalization;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Tests.Serialization;
+using pyRevitLabs.Json.Tests.Serialization;
 
-namespace Newtonsoft.Json.Tests.Linq
+namespace pyRevitLabs.Json.Tests.Linq
 {
     [TestFixture]
     public class JValueTests : TestFixtureBase
@@ -271,7 +271,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JValue v = new JValue(true);
                 JToken last = v.Last;
-            }, "Cannot access child value on Newtonsoft.Json.Linq.JValue.");
+            }, "Cannot access child value on pyRevitLabs.Json.Linq.JValue.");
         }
 
         [Test]
@@ -289,7 +289,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JValue v = new JValue(true);
                 JToken first = v.First;
-            }, "Cannot access child value on Newtonsoft.Json.Linq.JValue.");
+            }, "Cannot access child value on pyRevitLabs.Json.Linq.JValue.");
         }
 
         [Test]
@@ -299,7 +299,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JValue v = new JValue(true);
                 JToken first = v[0];
-            }, "Cannot access child value on Newtonsoft.Json.Linq.JValue.");
+            }, "Cannot access child value on pyRevitLabs.Json.Linq.JValue.");
         }
 
         [Test]
@@ -309,7 +309,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JValue v = new JValue(true);
                 v.Values<int>();
-            }, "Cannot access child value on Newtonsoft.Json.Linq.JValue.");
+            }, "Cannot access child value on pyRevitLabs.Json.Linq.JValue.");
         }
 
         [Test]
@@ -365,7 +365,7 @@ namespace Newtonsoft.Json.Tests.Linq
             {
                 JToken t = new JValue(5L);
                 t[0] = new JValue(3);
-            }, "Cannot set child value on Newtonsoft.Json.Linq.JValue.");
+            }, "Cannot set child value on pyRevitLabs.Json.Linq.JValue.");
         }
 
         [Test]

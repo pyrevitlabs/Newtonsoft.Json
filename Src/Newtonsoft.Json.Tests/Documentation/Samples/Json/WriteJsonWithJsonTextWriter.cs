@@ -30,13 +30,13 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Json
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Json
 {
     [TestFixture]
     public class WriteJsonWithJsonTextWriter : TestFixtureBase

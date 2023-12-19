@@ -1,4 +1,4 @@
-﻿namespace Newtonsoft.Json.Serialization
+﻿namespace pyRevitLabs.Json.Serialization
 {
     /// <summary>
     /// The default naming strategy. Property names and dictionary keys are unchanged.

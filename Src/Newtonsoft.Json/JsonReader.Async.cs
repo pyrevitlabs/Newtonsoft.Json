@@ -29,9 +29,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json
+namespace pyRevitLabs.Json
 {
     public abstract partial class JsonReader
 #if HAVE_ASYNC_DISPOSABLE

@@ -25,20 +25,20 @@
 
 #if !(PORTABLE || DNXCORE50 || PORTABLE40) || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Converters;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
 using System.Data;
 using System.IO;
 
-namespace Newtonsoft.Json.Tests.Converters
+namespace pyRevitLabs.Json.Tests.Converters
 {
     public class DataSetConverterTests : TestFixtureBase
     {

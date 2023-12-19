@@ -26,7 +26,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Newtonsoft.Json.Utilities
+namespace pyRevitLabs.Json.Utilities
 {
     internal static class BoxedPrimitives
     {

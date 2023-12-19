@@ -24,18 +24,18 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Bson;
+using pyRevitLabs.Json.Bson;
 using System.Globalization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Converters
+namespace pyRevitLabs.Json.Converters
 {
     /// <summary>
     /// Converts a <see cref="BsonObjectId"/> to and from JSON and BSON.
     /// </summary>
-    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/Newtonsoft.Json.Bson for more details.")]
+    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/pyRevitLabs.Json.Bson for more details.")]
     public class BsonObjectIdConverter : JsonConverter
     {
         /// <summary>

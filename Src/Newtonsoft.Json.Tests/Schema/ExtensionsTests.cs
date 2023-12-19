@@ -29,21 +29,21 @@ using System.Collections.Generic;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Schema;
+using pyRevitLabs.Json.Linq;
 using System.IO;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
 #if !(DNXCORE50)
 using System.Data;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Schema
+namespace pyRevitLabs.Json.Tests.Schema
 {
     [TestFixture]
     public class ExtensionsTests : TestFixtureBase

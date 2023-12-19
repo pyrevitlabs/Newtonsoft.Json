@@ -34,9 +34,9 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using BenchmarkDotNet.Attributes;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 
-namespace Newtonsoft.Json.Tests.Benchmarks
+namespace pyRevitLabs.Json.Tests.Benchmarks
 {
     public class XmlNodeConverterBenchmarks
     {

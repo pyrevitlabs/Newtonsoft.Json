@@ -29,13 +29,13 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Serializer
 {
     [TestFixture]
     public class SerializeTypeNameHandling : TestFixtureBase
@@ -82,13 +82,13 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
 
             Console.WriteLine(jsonTypeNameAll);
             // {
-            //   "$type": "Newtonsoft.Json.Samples.Stockholder, Newtonsoft.Json.Tests",
+            //   "$type": "pyRevitLabs.Json.Samples.Stockholder, pyRevitLabs.Json.Tests",
             //   "FullName": "Steve Stockholder",
             //   "Businesses": {
-            //     "$type": "System.Collections.Generic.List`1[[Newtonsoft.Json.Samples.Business, Newtonsoft.Json.Tests]], mscorlib",
+            //     "$type": "System.Collections.Generic.List`1[[pyRevitLabs.Json.Samples.Business, pyRevitLabs.Json.Tests]], mscorlib",
             //     "$values": [
             //       {
-            //         "$type": "Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests",
+            //         "$type": "pyRevitLabs.Json.Samples.Hotel, pyRevitLabs.Json.Tests",
             //         "Stars": 4,
             //         "Name": "Hudson Hotel"
             //       }
@@ -106,7 +106,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             //   "FullName": "Steve Stockholder",
             //   "Businesses": [
             //     {
-            //       "$type": "Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests",
+            //       "$type": "pyRevitLabs.Json.Samples.Hotel, pyRevitLabs.Json.Tests",
             //       "Stars": 4,
             //       "Name": "Hudson Hotel"
             //     }

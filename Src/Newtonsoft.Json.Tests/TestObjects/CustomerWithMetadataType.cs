@@ -31,7 +31,7 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 #endif
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
 #if !(DNXCORE50 || NET20)
     [MetadataType(typeof(CustomerValidation))]

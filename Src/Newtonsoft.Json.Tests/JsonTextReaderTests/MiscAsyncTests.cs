@@ -31,16 +31,16 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 using System.IO;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Tests.TestObjects.JsonTextReaderTests;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Tests.TestObjects.JsonTextReaderTests;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests.JsonTextReaderTests
+namespace pyRevitLabs.Json.Tests.JsonTextReaderTests
 {
     [TestFixture]
 #if !DNXCORE50

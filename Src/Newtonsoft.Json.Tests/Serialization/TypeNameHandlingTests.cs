@@ -24,7 +24,7 @@
 #endregion
 
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
@@ -34,30 +34,30 @@ using System.Collections.ObjectModel;
 using System.Dynamic;
 #endif
 using System.Text;
-using Newtonsoft.Json.Tests.Linq;
+using pyRevitLabs.Json.Tests.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.Serialization.Formatters;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Net;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Reflection;
 
-namespace Newtonsoft.Json.Tests.Serialization
+namespace pyRevitLabs.Json.Tests.Serialization
 {
     [TestFixture]
     public class TypeNameHandlingTests : TestFixtureBase
@@ -81,7 +81,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             });
 
             string expectedJson = @"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.HasMultidimensionalByteArray, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.HasMultidimensionalByteArray, pyRevitLabs.Json.Tests"",
   ""Array2D"": {
     ""$type"": """ + array2dRef + @""",
     ""$values"": [
@@ -126,7 +126,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         public void DeserializeMultidimensionalByteArrayWithTypeName()
         {
             string json = @"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.HasMultidimensionalByteArray, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.HasMultidimensionalByteArray, pyRevitLabs.Json.Tests"",
   ""Array2D"": {
     ""$type"": ""System.Byte[,], mscorlib"",
     ""$values"": [
@@ -186,7 +186,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         public void DeserializeByteArrayWithTypeName()
         {
             string json = @"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.HasByteArray, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.HasByteArray, pyRevitLabs.Json.Tests"",
   ""EncryptedPassword"": {
     ""$type"": ""System.Byte[], mscorlib"",
     ""$value"": ""cGFzc3dvcmQ=""
@@ -204,7 +204,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         public void DeserializeByteArrayWithTypeName_BadAdditionalContent()
         {
             string json = @"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.HasByteArray, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.HasByteArray, pyRevitLabs.Json.Tests"",
   ""EncryptedPassword"": {
     ""$type"": ""System.Byte[], mscorlib"",
     ""$value"": ""cGFzc3dvcmQ="",
@@ -225,7 +225,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         public void DeserializeByteArrayWithTypeName_ExtraProperty()
         {
             string json = @"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.HasByteArray, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.HasByteArray, pyRevitLabs.Json.Tests"",
   ""EncryptedPassword"": {
     ""$type"": ""System.Byte[], mscorlib"",
     ""$value"": ""cGFzc3dvcmQ=""
@@ -350,7 +350,7 @@ namespace Newtonsoft.Json.Tests.Serialization
 
             StringAssert.AreEqual(@"{
   ""movie"": {
-    ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Movie, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Movie, pyRevitLabs.Json.Tests"",
     ""Name"": ""Die Hard"",
     ""Description"": null,
     ""Classification"": null,
@@ -378,7 +378,7 @@ namespace Newtonsoft.Json.Tests.Serialization
   {
     ""Key"": ""movie"",
     ""Value"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Movie, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Movie, pyRevitLabs.Json.Tests"",
       ""Name"": ""Die Hard"",
       ""Description"": null,
       ""Classification"": null,
@@ -420,7 +420,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             var result = sw.ToString();
 
             StringAssert.AreEqual(@"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Organization.WagePerson, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Organization.WagePerson, pyRevitLabs.Json.Tests"",
   ""HourlyWage"": 0.0,
   ""Name"": null,
   ""BirthDate"": ""0001-01-01T00:00:00"",
@@ -445,7 +445,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             });
 
             StringAssert.AreEqual(@"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Organization.WagePerson, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Organization.WagePerson, pyRevitLabs.Json.Tests"",
   ""HourlyWage"": 0.0,
   ""Name"": null,
   ""BirthDate"": ""0001-01-01T00:00:00"",
@@ -462,7 +462,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             });
 
             StringAssert.AreEqual(@"{
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Organization.WagePerson, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Organization.WagePerson, pyRevitLabs.Json.Tests"",
   ""HourlyWage"": 0.0,
   ""Name"": null,
   ""BirthDate"": ""0001-01-01T00:00:00"",
@@ -478,7 +478,7 @@ namespace Newtonsoft.Json.Tests.Serialization
                 TypeNameHandling = TypeNameHandling.Auto
             });
 
-            StringAssert.AreEqual(@"{""$type"":""Newtonsoft.Json.Tests.TestObjects.Organization.WagePerson, Newtonsoft.Json.Tests"",""HourlyWage"":0.0,""Name"":null,""BirthDate"":""0001-01-01T00:00:00"",""LastModified"":""0001-01-01T00:00:00""}", json);
+            StringAssert.AreEqual(@"{""$type"":""pyRevitLabs.Json.Tests.TestObjects.Organization.WagePerson, pyRevitLabs.Json.Tests"",""HourlyWage"":0.0,""Name"":null,""BirthDate"":""0001-01-01T00:00:00"",""LastModified"":""0001-01-01T00:00:00""}", json);
         }
 
         public class Wrapper
@@ -748,7 +748,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         {
             string json = @"{
   ""$id"": ""1"",
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Employee"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Employee"",
   ""Name"": ""Name!"",
   ""Manager"": null
 }";
@@ -759,7 +759,7 @@ namespace Newtonsoft.Json.Tests.Serialization
                 {
                     TypeNameHandling = TypeNameHandling.Objects
                 });
-            }, "Type specified in JSON 'Newtonsoft.Json.Tests.TestObjects.Employee' was not resolved. Path '$type', line 3, position 55.");
+            }, "Type specified in JSON 'pyRevitLabs.Json.Tests.TestObjects.Employee' was not resolved. Path '$type', line 3, position 55.");
         }
 
         public interface ICorrelatedMessage
@@ -942,7 +942,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         {
             string json = @"{
   ""$id"": ""1"",
-  ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Employee"",
+  ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Employee"",
   ""Name"": ""Name!""
 }";
 
@@ -973,7 +973,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         [Test]
         public void SerializeUsingCustomBinder()
         {
-            TypeNameSerializationBinder binder = new TypeNameSerializationBinder("Newtonsoft.Json.Tests.Serialization.{0}, Newtonsoft.Json.Tests");
+            TypeNameSerializationBinder binder = new TypeNameSerializationBinder("pyRevitLabs.Json.Tests.Serialization.{0}, pyRevitLabs.Json.Tests");
 
             IList<object> values = new List<object>
             {
@@ -1027,7 +1027,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             {
                 TypeNameHandling = TypeNameHandling.Auto,
 #pragma warning disable CS0618 // Type or member is obsolete
-                Binder = new TypeNameSerializationBinder("Newtonsoft.Json.Tests.Serialization.{0}, Newtonsoft.Json.Tests")
+                Binder = new TypeNameSerializationBinder("pyRevitLabs.Json.Tests.Serialization.{0}, pyRevitLabs.Json.Tests")
 #pragma warning restore CS0618 // Type or member is obsolete
             });
 
@@ -1067,7 +1067,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         [Test]
         public void NewSerializeUsingCustomBinder()
         {
-            NewTypeNameSerializationBinder binder = new NewTypeNameSerializationBinder("Newtonsoft.Json.Tests.Serialization.{0}, Newtonsoft.Json.Tests");
+            NewTypeNameSerializationBinder binder = new NewTypeNameSerializationBinder("pyRevitLabs.Json.Tests.Serialization.{0}, pyRevitLabs.Json.Tests");
 
             IList<object> values = new List<object>
             {
@@ -1118,7 +1118,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             IList<object> newValues = JsonConvert.DeserializeObject<IList<object>>(json, new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Auto,
-                SerializationBinder = new NewTypeNameSerializationBinder("Newtonsoft.Json.Tests.Serialization.{0}, Newtonsoft.Json.Tests")
+                SerializationBinder = new NewTypeNameSerializationBinder("pyRevitLabs.Json.Tests.Serialization.{0}, pyRevitLabs.Json.Tests")
             });
 
             CustomAssert.IsInstanceOfType(typeof(Customer), newValues[0]);
@@ -1242,7 +1242,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             // {
             //   "Address": "http://www.google.com",
             //   "Body": {
-            //     "$type": "Newtonsoft.Json.Tests.Serialization.SearchDetails, Newtonsoft.Json.Tests",
+            //     "$type": "pyRevitLabs.Json.Tests.Serialization.SearchDetails, pyRevitLabs.Json.Tests",
             //     "Query": "Json.NET",
             //     "Language": "en-us"
             //   }
@@ -1583,11 +1583,11 @@ namespace Newtonsoft.Json.Tests.Serialization
             string json = JsonConvert.SerializeObject(l, Formatting.Indented);
             StringAssert.AreEqual(@"[
   {
-    ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
     ""MyProperty"": 0
   },
   {
-    ""$type"": ""Newtonsoft.Json.Tests.TestObjects.Organization.Employee, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.Organization.Employee, pyRevitLabs.Json.Tests"",
     ""FirstName"": null,
     ""LastName"": null,
     ""BirthDate"": ""2000-12-12T12:12:12Z"",
@@ -1618,7 +1618,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             string json = JsonConvert.SerializeObject(l, Formatting.Indented);
             StringAssert.AreEqual(@"{
   ""First"": {
-    ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
     ""MyProperty"": 1
   },
   ""Second"": ""String!"",
@@ -1648,7 +1648,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             string json = JsonConvert.SerializeObject(o1, Formatting.Indented);
             string expected = @"{
   ""Object1"": {
-    ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
     ""MyProperty"": 1
   },
   ""Object2"": 123,
@@ -1689,7 +1689,7 @@ namespace Newtonsoft.Json.Tests.Serialization
     1,
     ""two"",
     {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     }
   ]
@@ -1730,7 +1730,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             StringAssert.AreEqual(@"{
   ""Data"": [
     {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     {
@@ -1755,14 +1755,14 @@ namespace Newtonsoft.Json.Tests.Serialization
             json = @"{
   ""Data"": [
     {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     {
       ""$type"": """ + listTypeName + @""",
       ""$values"": [
         {
-          ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+          ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
           ""MyProperty"": 1
         }
       ]
@@ -1812,7 +1812,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             StringAssert.AreEqual(@"{
   ""Data"": {
     ""one"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     ""two"": {
@@ -1835,13 +1835,13 @@ namespace Newtonsoft.Json.Tests.Serialization
             json = @"{
   ""Data"": {
     ""one"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     ""two"": {
       ""$type"": """ + dictionaryTypeName + @""",
       ""one"": {
-        ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+        ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
         ""MyProperty"": 1
       }
     }
@@ -1898,7 +1898,7 @@ namespace Newtonsoft.Json.Tests.Serialization
       ]
     },
     ""Prop2"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     ""Prop3"": 3,
@@ -1946,11 +1946,11 @@ namespace Newtonsoft.Json.Tests.Serialization
             StringAssert.AreEqual(@"{
   ""Data"": {
     ""one"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     ""two"": {
-      ""$type"": ""Newtonsoft.Json.Tests.Linq.DynamicDictionary, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.Linq.DynamicDictionary, pyRevitLabs.Json.Tests"",
       ""one"": {
         ""MyProperty"": 2
       }
@@ -1973,13 +1973,13 @@ namespace Newtonsoft.Json.Tests.Serialization
             json = @"{
   ""Data"": {
     ""one"": {
-      ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
       ""MyProperty"": 1
     },
     ""two"": {
-      ""$type"": ""Newtonsoft.Json.Tests.Linq.DynamicDictionary, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.Linq.DynamicDictionary, pyRevitLabs.Json.Tests"",
       ""one"": {
-        ""$type"": ""Newtonsoft.Json.Tests.TestObjects.TestComponentSimple, Newtonsoft.Json.Tests"",
+        ""$type"": ""pyRevitLabs.Json.Tests.TestObjects.TestComponentSimple, pyRevitLabs.Json.Tests"",
         ""MyProperty"": 2
       }
     }
@@ -2048,7 +2048,7 @@ namespace Newtonsoft.Json.Tests.Serialization
 
             StringAssert.AreEqual(@"{
   ""c"": {
-    ""$type"": ""Newtonsoft.Json.Tests.Serialization.MyChild, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.Serialization.MyChild, pyRevitLabs.Json.Tests"",
     ""p"": ""string!""
   }
 }", json);
@@ -2083,7 +2083,7 @@ namespace Newtonsoft.Json.Tests.Serialization
 
             StringAssert.AreEqual(@"{
   ""c"": {
-    ""$type"": ""Newtonsoft.Json.Tests.Serialization.MyChildList, Newtonsoft.Json.Tests"",
+    ""$type"": ""pyRevitLabs.Json.Tests.Serialization.MyChildList, pyRevitLabs.Json.Tests"",
     ""$values"": [
       ""string!""
     ]
@@ -2123,7 +2123,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             StringAssert.AreEqual(@"{
   ""ParentProp"": {
     ""c"": {
-      ""$type"": ""Newtonsoft.Json.Tests.Serialization.MyChild, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.Serialization.MyChild, pyRevitLabs.Json.Tests"",
       ""p"": ""string!""
     }
   }
@@ -2146,7 +2146,7 @@ namespace Newtonsoft.Json.Tests.Serialization
             input.Add(new Stack<string>(new List<string> { "Seven", "Eight", "Nine" }));
 
             string serialized = JsonConvert.SerializeObject(input,
-                Newtonsoft.Json.Formatting.Indented,
+                pyRevitLabs.Json.Formatting.Indented,
                 new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.All,
@@ -2172,7 +2172,7 @@ namespace Newtonsoft.Json.Tests.Serialization
         {
             string json = @"{
     ""itemIdentifier"": {
-        ""$type"": ""Newtonsoft.Json.Tests.Serialization.ReportItemKeys, Newtonsoft.Json.Tests"",
+        ""$type"": ""pyRevitLabs.Json.Tests.Serialization.ReportItemKeys, pyRevitLabs.Json.Tests"",
         ""dataType"": 0,
         ""wantedUnitID"": 1,
         ""application"": 3,

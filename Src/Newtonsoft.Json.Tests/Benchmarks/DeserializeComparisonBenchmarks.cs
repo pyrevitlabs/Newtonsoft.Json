@@ -38,11 +38,11 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Bson;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Tests.TestObjects;
 
-namespace Newtonsoft.Json.Tests.Benchmarks
+namespace pyRevitLabs.Json.Tests.Benchmarks
 {
     public class DeserializeComparisonBenchmarks
     {

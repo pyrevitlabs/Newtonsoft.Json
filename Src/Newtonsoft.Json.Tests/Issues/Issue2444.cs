@@ -27,15 +27,15 @@
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Converters;
 
-namespace Newtonsoft.Json.Tests.Issues
+namespace pyRevitLabs.Json.Tests.Issues
 {
     [TestFixture]
     public class Issue2444
@@ -70,7 +70,7 @@ namespace Newtonsoft.Json.Tests.Issues
             ExceptionAssert.Throws<JsonSerializationException>(() =>
             {
                 JsonConvert.DeserializeObject<List<MyEnum>>(@"[""text_value""]", settings);
-            }, @"Error converting value ""text_value"" to type 'Newtonsoft.Json.Tests.Issues.Issue2444+MyEnum'. Path '[0]', line 1, position 13.");
+            }, @"Error converting value ""text_value"" to type 'pyRevitLabs.Json.Tests.Issues.Issue2444+MyEnum'. Path '[0]', line 1, position 13.");
         }
 
         public enum MyEnum

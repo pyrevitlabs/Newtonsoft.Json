@@ -23,22 +23,22 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Linq.JsonPath;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Linq.JsonPath;
 using System;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 
-namespace Newtonsoft.Json.Tests.Issues
+namespace pyRevitLabs.Json.Tests.Issues
 {
     [TestFixture]
     public class Issue0573
@@ -54,7 +54,7 @@ namespace Newtonsoft.Json.Tests.Issues
             });
             List<string> messages = traceWriter.GetTraceMessages().ToList();
 
-            bool hasMessage = messages.Any(message => message.Contains("Info Unable to deserialize value to non-writable property 'Value' on Newtonsoft.Json.Tests.Issues.Issue0573+PrivateSetterTestClass. Path 'Value', line 1, position 13."));
+            bool hasMessage = messages.Any(message => message.Contains("Info Unable to deserialize value to non-writable property 'Value' on pyRevitLabs.Json.Tests.Issues.Issue0573+PrivateSetterTestClass. Path 'Value', line 1, position 13."));
             Assert.IsTrue(hasMessage);
         }
 

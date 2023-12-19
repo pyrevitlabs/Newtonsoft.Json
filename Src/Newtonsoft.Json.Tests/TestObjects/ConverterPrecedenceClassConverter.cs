@@ -25,10 +25,10 @@
 
 using System;
 using System.Globalization;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
     public abstract class ConverterPrecedenceClassConverter : JsonConverter
     {
