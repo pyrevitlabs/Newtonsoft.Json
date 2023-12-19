@@ -29,9 +29,9 @@ using System;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Linq
+namespace pyRevitLabs.Json.Linq
 {
     public abstract partial class JToken
     {

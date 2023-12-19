@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
     public class Product
     {

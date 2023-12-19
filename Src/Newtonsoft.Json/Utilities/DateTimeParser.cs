@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Newtonsoft.Json.Utilities
+namespace pyRevitLabs.Json.Utilities
 {
     internal enum ParserTimeZone
     {

@@ -27,9 +27,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Serialization
+namespace pyRevitLabs.Json.Serialization
 {
     internal abstract class JsonSerializerInternalBase
     {

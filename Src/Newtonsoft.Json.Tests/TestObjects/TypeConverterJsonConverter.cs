@@ -26,13 +26,13 @@
 using System;
 using System.ComponentModel;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
 #if !(NET35 || NET20 || PORTABLE || PORTABLE40) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
     internal class TypeConverterJsonConverter : JsonConverter

@@ -34,23 +34,23 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Schema;
+using pyRevitLabs.Json.Serialization;
 #if !(NET20 || NET35 || NET40)
 using System.Threading.Tasks;
 #endif
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests
+namespace pyRevitLabs.Json.Tests
 {
     [TestFixture]
     public class DemoTests : TestFixtureBase
@@ -382,16 +382,16 @@ namespace Newtonsoft.Json.Tests
 
             StringAssert.AreEqual(@"{
   ""$id"": ""1"",
-  ""$type"": ""Newtonsoft.Json.Tests.DemoTests+Manager, Newtonsoft.Json.Tests"",
+  ""$type"": ""pyRevitLabs.Json.Tests.DemoTests+Manager, pyRevitLabs.Json.Tests"",
   ""Reportees"": [
     {
       ""$id"": ""2"",
-      ""$type"": ""Newtonsoft.Json.Tests.DemoTests+Employee, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.DemoTests+Employee, pyRevitLabs.Json.Tests"",
       ""Name"": ""Arnie Admin""
     },
     {
       ""$id"": ""3"",
-      ""$type"": ""Newtonsoft.Json.Tests.DemoTests+Manager, Newtonsoft.Json.Tests"",
+      ""$type"": ""pyRevitLabs.Json.Tests.DemoTests+Manager, pyRevitLabs.Json.Tests"",
       ""Reportees"": [
         {
           ""$ref"": ""2""
@@ -409,16 +409,16 @@ namespace Newtonsoft.Json.Tests
         {
             string json = @"{
   '$id': '1',
-  '$type': 'Newtonsoft.Json.Tests.DemoTests+Manager, Newtonsoft.Json.Tests',
+  '$type': 'pyRevitLabs.Json.Tests.DemoTests+Manager, pyRevitLabs.Json.Tests',
   'Reportees': [
     {
       '$id': '2',
-      '$type': 'Newtonsoft.Json.Tests.DemoTests+Employee, Newtonsoft.Json.Tests',
+      '$type': 'pyRevitLabs.Json.Tests.DemoTests+Employee, pyRevitLabs.Json.Tests',
       'Name': 'Arnie Admin'
     },
     {
       '$id': '3',
-      '$type': 'Newtonsoft.Json.Tests.DemoTests+Manager, Newtonsoft.Json.Tests',
+      '$type': 'pyRevitLabs.Json.Tests.DemoTests+Manager, pyRevitLabs.Json.Tests',
       'Reportees': [
         {
           '$ref': '2'
@@ -623,20 +623,20 @@ namespace Newtonsoft.Json.Tests
             dt.Columns.Add("Version", typeof(string));
             dt.Columns.Add("ReleaseDate", typeof(DateTime));
 
-            dt.Rows.Add("Newtonsoft.Json", "11.0.1", new DateTime(2018, 2, 17));
-            dt.Rows.Add("Newtonsoft.Json", "10.0.3", new DateTime(2017, 6, 18));
+            dt.Rows.Add("pyRevitLabs.Json", "11.0.1", new DateTime(2018, 2, 17));
+            dt.Rows.Add("pyRevitLabs.Json", "10.0.3", new DateTime(2017, 6, 18));
 
             string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
 
             Console.WriteLine(json);
             // [
             //   {
-            //     "PackageId": "Newtonsoft.Json",
+            //     "PackageId": "pyRevitLabs.Json",
             //     "Version": "11.0.1",
             //     "ReleaseDate": "2018-02-17T00:00:00"
             //   },
             //   {
-            //     "PackageId": "Newtonsoft.Json",
+            //     "PackageId": "pyRevitLabs.Json",
             //     "Version": "10.0.3",
             //     "ReleaseDate": "2017-06-18T00:00:00"
             //   }
@@ -644,12 +644,12 @@ namespace Newtonsoft.Json.Tests
 
             StringAssert.AreEqual(@"[
   {
-    ""PackageId"": ""Newtonsoft.Json"",
+    ""PackageId"": ""pyRevitLabs.Json"",
     ""Version"": ""11.0.1"",
     ""ReleaseDate"": ""2018-02-17T00:00:00""
   },
   {
-    ""PackageId"": ""Newtonsoft.Json"",
+    ""PackageId"": ""pyRevitLabs.Json"",
     ""Version"": ""10.0.3"",
     ""ReleaseDate"": ""2017-06-18T00:00:00""
   }
@@ -662,7 +662,7 @@ namespace Newtonsoft.Json.Tests
         {
             JArray packages = JArray.Parse(@"[
               {
-                ""PackageId"": ""Newtonsoft.Json"",
+                ""PackageId"": ""pyRevitLabs.Json"",
                 ""Version"": ""11.0.1"",
                 ""ReleaseDate"": ""2018-02-17T00:00:00""
               },

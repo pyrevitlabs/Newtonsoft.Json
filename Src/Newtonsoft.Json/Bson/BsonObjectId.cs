@@ -24,16 +24,16 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Bson
+namespace pyRevitLabs.Json.Bson
 {
     /// <summary>
     /// Represents a BSON Oid (object id).
     /// </summary>
-    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/Newtonsoft.Json.Bson for more details.")]
+    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/pyRevitLabs.Json.Bson for more details.")]
     public class BsonObjectId
     {
         /// <summary>

@@ -29,27 +29,27 @@ using System.Text;
 #if !(PORTABLE || PORTABLE40 || NET35 || NET20) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System.Numerics;
 #endif
-using Newtonsoft.Json.Linq.JsonPath;
-using Newtonsoft.Json.Tests.Bson;
+using pyRevitLabs.Json.Linq.JsonPath;
+using pyRevitLabs.Json.Tests.Bson;
 #if HAVE_REGEX_TIMEOUTS
 using System.Text.RegularExpressions;
 #endif
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 using TestCaseSource = Xunit.MemberDataAttribute;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 
-namespace Newtonsoft.Json.Tests.Linq.JsonPath
+namespace pyRevitLabs.Json.Tests.Linq.JsonPath
 {
     [TestFixture]
     public class JPathExecuteTests : TestFixtureBase

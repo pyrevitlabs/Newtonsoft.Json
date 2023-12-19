@@ -26,7 +26,7 @@
 using System;
 using System.Text;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
 #if !(DNXCORE50) || NETSTANDARD2_0 || NET6_0_OR_GREATER
     public class EncodingReadConverter : JsonConverter

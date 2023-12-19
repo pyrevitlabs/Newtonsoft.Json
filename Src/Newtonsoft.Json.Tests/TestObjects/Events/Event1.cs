@@ -25,9 +25,9 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Converters;
 
-namespace Newtonsoft.Json.Tests.TestObjects.Events
+namespace pyRevitLabs.Json.Tests.TestObjects.Events
 {
     public class Event1
     {

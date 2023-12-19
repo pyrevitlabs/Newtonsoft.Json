@@ -31,7 +31,7 @@ using System.Text;
 using System.Collections;
 using System.Diagnostics;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
@@ -39,9 +39,9 @@ using System.Globalization;
 #if HAVE_METHOD_IMPL_ATTRIBUTE
 using System.Runtime.CompilerServices;
 #endif
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 
-namespace Newtonsoft.Json.Utilities
+namespace pyRevitLabs.Json.Utilities
 {
     internal static class CollectionUtils
     {
@@ -253,7 +253,7 @@ namespace Newtonsoft.Json.Utilities
         }
 
 #if HAVE_FAST_REVERSE
-        // faster reverse in .NET Framework with value types - https://github.com/JamesNK/Newtonsoft.Json/issues/1430
+        // faster reverse in .NET Framework with value types - https://github.com/JamesNK/pyRevitLabs.Json/issues/1430
         public static void FastReverse<T>(this List<T> list)
         {
             int i = 0;

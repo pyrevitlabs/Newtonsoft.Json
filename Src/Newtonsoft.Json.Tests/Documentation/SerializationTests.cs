@@ -32,24 +32,24 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Linq;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Utilities;
 using System.Globalization;
-using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+using ErrorEventArgs = pyRevitLabs.Json.Serialization.ErrorEventArgs;
 using OriginalStreamWriter = System.IO.StreamWriter;
-using StreamWriter = Newtonsoft.Json.Tests.Documentation.SerializationTests.StreamWriter;
+using StreamWriter = pyRevitLabs.Json.Tests.Documentation.SerializationTests.StreamWriter;
 
-namespace Newtonsoft.Json.Tests.Documentation
+namespace pyRevitLabs.Json.Tests.Documentation
 {
     [TestFixture]
     public class SerializationTests : TestFixtureBase
@@ -520,7 +520,7 @@ namespace Newtonsoft.Json.Tests.Documentation
             IPerson person = people[0];
 
             Console.WriteLine(person.GetType());
-            // Newtonsoft.Json.Tests.Employee
+            // pyRevitLabs.Json.Tests.Employee
 
             Console.WriteLine(person.FirstName);
             // Maurice

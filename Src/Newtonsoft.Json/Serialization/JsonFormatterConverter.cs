@@ -27,10 +27,10 @@
 using System;
 using System.Globalization;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Utilities;
+using pyRevitLabs.Json.Linq;
 
-namespace Newtonsoft.Json.Serialization
+namespace pyRevitLabs.Json.Serialization
 {
     internal class JsonFormatterConverter : IFormatterConverter
     {

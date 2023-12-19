@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq.JsonPath;
+using pyRevitLabs.Json.Linq.JsonPath;
 #if HAVE_DYNAMIC
 using System.Dynamic;
 using System.Linq.Expressions;
@@ -34,20 +34,20 @@ using System.IO;
 #if HAVE_BIG_INTEGER
 using System.Numerics;
 #endif
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Diagnostics;
 using System.Globalization;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 
-namespace Newtonsoft.Json.Linq
+namespace pyRevitLabs.Json.Linq
 {
     /// <summary>
     /// Represents an abstract JSON token.
@@ -339,7 +339,7 @@ namespace Newtonsoft.Json.Linq
         {
             JToken? token = this[key];
 
-            // null check to fix MonoTouch issue - https://github.com/dolbz/Newtonsoft.Json/commit/a24e3062846b30ee505f3271ac08862bb471b822
+            // null check to fix MonoTouch issue - https://github.com/dolbz/pyRevitLabs.Json/commit/a24e3062846b30ee505f3271ac08862bb471b822
             return token == null ? default : Extensions.Convert<JToken, T>(token);
         }
 
@@ -488,7 +488,7 @@ namespace Newtonsoft.Json.Linq
 
         #region Cast from operators
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.Boolean"/>.
+        /// Performs an explicit conversion from <see cref="pyRevitLabs.Json.Linq.JToken"/> to <see cref="System.Boolean"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -512,7 +512,7 @@ namespace Newtonsoft.Json.Linq
 
 #if HAVE_DATE_TIME_OFFSET
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.DateTimeOffset"/>.
+        /// Performs an explicit conversion from <see cref="pyRevitLabs.Json.Linq.JToken"/> to <see cref="System.DateTimeOffset"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -856,7 +856,7 @@ namespace Newtonsoft.Json.Linq
         }
 
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.SByte"/>.
+        /// Performs an explicit conversion from <see cref="pyRevitLabs.Json.Linq.JToken"/> to <see cref="System.SByte"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -1290,7 +1290,7 @@ namespace Newtonsoft.Json.Linq
         }
 
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.UInt64"/>.
+        /// Performs an explicit conversion from <see cref="pyRevitLabs.Json.Linq.JToken"/> to <see cref="System.UInt64"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>

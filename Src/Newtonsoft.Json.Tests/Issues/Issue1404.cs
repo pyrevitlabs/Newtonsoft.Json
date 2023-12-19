@@ -29,17 +29,17 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Utilities;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 
-namespace Newtonsoft.Json.Tests.Issues
+namespace pyRevitLabs.Json.Tests.Issues
 {
     [TestFixture]
     public class Issue1404 : TestFixtureBase

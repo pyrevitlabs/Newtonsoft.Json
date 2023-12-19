@@ -30,30 +30,30 @@ using System.ComponentModel;
 #if !(NET20 || NET35 || PORTABLE)
 using System.Numerics;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 using System.IO;
 using System.Collections;
 #if !(DNXCORE50)
 using System.Web.UI;
 #endif
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests.Linq
+namespace pyRevitLabs.Json.Tests.Linq
 {
     [TestFixture]
     public class JObjectTests : TestFixtureBase
@@ -227,7 +227,7 @@ namespace Newtonsoft.Json.Tests.Linq
                 JObject o = new JObject();
                 o.Add("PropertyNameValue", null);
                 o.Add("PropertyNameValue", null);
-            }, "Can not add property PropertyNameValue to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.");
+            }, "Can not add property PropertyNameValue to pyRevitLabs.Json.Linq.JObject. Property with the same name already exists on object.");
         }
 
         [Test]
@@ -918,7 +918,7 @@ Parameter name: arrayIndex",
                 IList l = new JObject(p1, p2);
 
                 l.Add(new JValue("Bad!"));
-            }, "Can not add Newtonsoft.Json.Linq.JValue to Newtonsoft.Json.Linq.JObject.");
+            }, "Can not add pyRevitLabs.Json.Linq.JValue to pyRevitLabs.Json.Linq.JObject.");
         }
 
         [Test]
@@ -946,7 +946,7 @@ Parameter name: arrayIndex",
                 JProperty p3 = new JProperty("Test2", "II");
 
                 l.Add(p3);
-            }, "Can not add property Test2 to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.");
+            }, "Can not add property Test2 to pyRevitLabs.Json.Linq.JObject. Property with the same name already exists on object.");
         }
 
         [Test]
@@ -1049,7 +1049,7 @@ Parameter name: arrayIndex",
 
                 l[0] = p3;
                 l[1] = p3;
-            }, "Can not add property Test3 to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.");
+            }, "Can not add property Test3 to pyRevitLabs.Json.Linq.JObject. Property with the same name already exists on object.");
         }
 
         [Test]
@@ -1062,7 +1062,7 @@ Parameter name: arrayIndex",
                 IList l = new JObject(p1, p2);
 
                 l[0] = new JValue(true);
-            }, @"Can not add Newtonsoft.Json.Linq.JValue to Newtonsoft.Json.Linq.JObject.");
+            }, @"Can not add pyRevitLabs.Json.Linq.JValue to pyRevitLabs.Json.Linq.JObject.");
         }
 
         [Test]
@@ -1158,7 +1158,7 @@ Parameter name: arrayIndex",
                 IList<JToken> l = new JObject(p1, p2);
 
                 l.Add(new JValue("Bad!"));
-            }, "Can not add Newtonsoft.Json.Linq.JValue to Newtonsoft.Json.Linq.JObject.");
+            }, "Can not add pyRevitLabs.Json.Linq.JValue to pyRevitLabs.Json.Linq.JObject.");
         }
 
         [Test]
@@ -1172,7 +1172,7 @@ Parameter name: arrayIndex",
 
                 // string is implicitly converted to JValue
                 l.Add("Bad!");
-            }, "Can not add Newtonsoft.Json.Linq.JValue to Newtonsoft.Json.Linq.JObject.");
+            }, "Can not add pyRevitLabs.Json.Linq.JValue to pyRevitLabs.Json.Linq.JObject.");
         }
 
         [Test]
@@ -1187,7 +1187,7 @@ Parameter name: arrayIndex",
                 JProperty p3 = new JProperty("Test2", "II");
 
                 l.Add(p3);
-            }, "Can not add property Test2 to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.");
+            }, "Can not add property Test2 to pyRevitLabs.Json.Linq.JObject. Property with the same name already exists on object.");
         }
 
         [Test]
@@ -1283,7 +1283,7 @@ Parameter name: arrayIndex",
 
                 l[0] = p3;
                 l[1] = p3;
-            }, "Can not add property Test3 to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.");
+            }, "Can not add property Test3 to pyRevitLabs.Json.Linq.JObject. Property with the same name already exists on object.");
         }
 
 #if !(PORTABLE || DNXCORE50 || PORTABLE40) || NETSTANDARD2_0 || NET6_0_OR_GREATER
@@ -1403,7 +1403,7 @@ Parameter name: arrayIndex",
             {
                 IBindingList l = new JObject();
                 l.AddNew();
-            }, "Could not determine new value to add to 'Newtonsoft.Json.Linq.JObject'.");
+            }, "Could not determine new value to add to 'pyRevitLabs.Json.Linq.JObject'.");
         }
 
         [Test]

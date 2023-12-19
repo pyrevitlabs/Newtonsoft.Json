@@ -25,18 +25,18 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Globalization;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
 #endif
 
-namespace Newtonsoft.Json.Linq
+namespace pyRevitLabs.Json.Linq
 {
     /// <summary>
     /// Contains the LINQ to JSON extension methods.

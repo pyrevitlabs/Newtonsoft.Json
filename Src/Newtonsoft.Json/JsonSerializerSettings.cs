@@ -28,17 +28,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.Serialization.Formatters;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Runtime;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 
-namespace Newtonsoft.Json
+namespace pyRevitLabs.Json
 {
     /// <summary>
     /// Specifies the settings on a <see cref="JsonSerializer"/> object.

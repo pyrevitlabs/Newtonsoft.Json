@@ -28,14 +28,14 @@
 using System;
 using System.Collections.Generic;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 using System.Text;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 
-namespace Newtonsoft.Json.Tests.LinqToSql
+namespace pyRevitLabs.Json.Tests.LinqToSql
 {
     public class DepartmentConverter : JsonConverter
     {

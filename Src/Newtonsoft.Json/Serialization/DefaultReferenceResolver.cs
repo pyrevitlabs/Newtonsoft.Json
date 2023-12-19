@@ -24,10 +24,10 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Serialization
+namespace pyRevitLabs.Json.Serialization
 {
     internal class DefaultReferenceResolver : IReferenceResolver
     {

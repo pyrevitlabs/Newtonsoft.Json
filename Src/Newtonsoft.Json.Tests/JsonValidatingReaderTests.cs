@@ -28,7 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #endif
 #if !(NET20 || NET35 || PORTABLE) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System.Numerics;
@@ -37,18 +37,18 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 using System.Xml;
 using System.Xml.Schema;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Utilities;
-using ValidationEventArgs = Newtonsoft.Json.Schema.ValidationEventArgs;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Schema;
+using pyRevitLabs.Json.Utilities;
+using ValidationEventArgs = pyRevitLabs.Json.Schema.ValidationEventArgs;
 
-namespace Newtonsoft.Json.Tests
+namespace pyRevitLabs.Json.Tests
 {
     [TestFixture]
     public class JsonValidatingReaderTests : TestFixtureBase

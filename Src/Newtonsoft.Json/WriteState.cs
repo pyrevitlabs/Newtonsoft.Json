@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Newtonsoft.Json
+namespace pyRevitLabs.Json
 {
     /// <summary>
     /// Specifies the state of the <see cref="JsonWriter"/>.

@@ -30,16 +30,16 @@ using System.Threading.Tasks;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Tests.Linq
+namespace pyRevitLabs.Json.Tests.Linq
 {
     [TestFixture]
     public class JTokenAsyncTests : TestFixtureBase

@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <AssemblyName>pyRevitLabs.Json.TestConsole</AssemblyName>
+    <RootNamespace>pyRevitLabs.Json.TestConsole</RootNamespace>
+    
     <OutputType>Exe</OutputType>
+<!--    <TargetFrameworks>net46;net6.0</TargetFrameworks>-->
     <TargetFrameworks>net46;net6.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Newtonsoft.Json.TestConsole</RootNamespace>

@@ -27,17 +27,17 @@
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Converters;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Converters;
 using System.Collections;
 using System;
 
-namespace Newtonsoft.Json.Tests.Issues
+namespace pyRevitLabs.Json.Tests.Issues
 {
     [TestFixture]
     public class Issue2450

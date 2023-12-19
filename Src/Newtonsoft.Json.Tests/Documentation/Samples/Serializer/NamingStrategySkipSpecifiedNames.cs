@@ -26,17 +26,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Serialization;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Serializer
 {
     [TestFixture]
     public class NamingStrategySkipSpecifiedNames : TestFixtureBase

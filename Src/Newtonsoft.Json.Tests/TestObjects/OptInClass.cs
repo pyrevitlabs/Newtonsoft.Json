@@ -32,7 +32,7 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 #endif
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
 #if !(NET20 || DNXCORE50)
     [MetadataType(typeof(OptInClassMetadata))]

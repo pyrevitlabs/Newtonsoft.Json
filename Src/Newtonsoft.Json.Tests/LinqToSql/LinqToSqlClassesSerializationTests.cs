@@ -29,14 +29,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json.Tests.LinqToSql;
+using pyRevitLabs.Json.Tests.LinqToSql;
 using NUnit.Framework;
 using System.Reflection;
 using System.ComponentModel;
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 using System.Data.Linq.Mapping;
 
-namespace Newtonsoft.Json.Tests.LinqToSql
+namespace pyRevitLabs.Json.Tests.LinqToSql
 {
     public class LinqToSqlClassesSerializationTests : TestFixtureBase
     {

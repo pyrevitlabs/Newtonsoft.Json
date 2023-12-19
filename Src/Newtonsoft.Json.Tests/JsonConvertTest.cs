@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
-using Newtonsoft.Json.Schema;
+using pyRevitLabs.Json.Schema;
 #if !(NET20 || NET35 || PORTABLE40 || PORTABLE) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 using System.Numerics;
 #endif
@@ -39,23 +39,23 @@ using System.Text;
 using System.Threading.Tasks;
 #endif
 using System.Xml;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Linq;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Utilities;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests
+namespace pyRevitLabs.Json.Tests
 {
     [TestFixture]
     public class JsonConvertTest : TestFixtureBase

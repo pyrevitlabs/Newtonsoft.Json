@@ -25,9 +25,9 @@
 
 using System;
 using System.Globalization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
-namespace Newtonsoft.Json.Converters
+namespace pyRevitLabs.Json.Converters
 {
     /// <summary>
     /// Converts a <see cref="DateTime"/> to and from Unix epoch time

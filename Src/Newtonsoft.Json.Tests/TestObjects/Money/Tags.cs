@@ -25,7 +25,7 @@
 
 #if !(NET35 || NET20 || DNXCORE50) || NETSTANDARD1_3 || NETSTANDARD2_0 || NET6_0_OR_GREATER
 
-namespace Newtonsoft.Json.Tests.TestObjects.Money
+namespace pyRevitLabs.Json.Tests.TestObjects.Money
 {
     public static class Tags
     {

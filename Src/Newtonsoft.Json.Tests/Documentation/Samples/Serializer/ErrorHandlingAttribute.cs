@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-using Newtonsoft.Json.Serialization;
+using pyRevitLabs.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -31,13 +31,13 @@ using System.Text;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 
 #endif
 
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+namespace pyRevitLabs.Json.Tests.Documentation.Samples.Serializer
 {
     [TestFixture]
     public class ErrorHandlingAttribute : TestFixtureBase

@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
     public class PersonRaw
     {

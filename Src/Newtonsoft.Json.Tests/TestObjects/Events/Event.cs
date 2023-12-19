@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Newtonsoft.Json.Tests.TestObjects.Events
+namespace pyRevitLabs.Json.Tests.TestObjects.Events
 {
     public sealed class Event
     {

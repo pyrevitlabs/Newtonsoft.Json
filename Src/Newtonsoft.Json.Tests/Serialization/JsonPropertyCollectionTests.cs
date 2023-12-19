@@ -26,14 +26,14 @@
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
 
-namespace Newtonsoft.Json.Tests.Serialization
+namespace pyRevitLabs.Json.Tests.Serialization
 {
     [TestFixture]
     public class JsonPropertyCollectionTests : TestFixtureBase

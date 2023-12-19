@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Newtonsoft.Json.Tests.TestObjects
+namespace pyRevitLabs.Json.Tests.TestObjects
 {
     [Serializable]
     public sealed class VersionOld : IComparable, IComparable<VersionOld>, IEquatable<VersionOld>

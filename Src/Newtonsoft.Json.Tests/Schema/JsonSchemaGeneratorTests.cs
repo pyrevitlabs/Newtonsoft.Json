@@ -28,31 +28,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Tests.TestObjects;
-using Newtonsoft.Json.Tests.TestObjects.Organization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects.Organization;
+using pyRevitLabs.Json.Utilities;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Schema;
+using pyRevitLabs.Json.Schema;
 using System.IO;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json.Linq;
 using System.Text;
-using Extensions = Newtonsoft.Json.Schema.Extensions;
+using Extensions = pyRevitLabs.Json.Schema.Extensions;
 #if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Tests.Serialization;
+using pyRevitLabs.Json.Tests.Serialization;
 
-namespace Newtonsoft.Json.Tests.Schema
+namespace pyRevitLabs.Json.Tests.Schema
 {
     [TestFixture]
     public class JsonSchemaGeneratorTests : TestFixtureBase
@@ -266,7 +266,7 @@ namespace Newtonsoft.Json.Tests.Schema
             {
                 JsonSchemaGenerator generator = new JsonSchemaGenerator();
                 generator.Generate(typeof(CircularReferenceClass));
-            }, @"Unresolved circular reference for type 'Newtonsoft.Json.Tests.TestObjects.CircularReferenceClass'. Explicitly define an Id for the type using a JsonObject/JsonArray attribute or automatically generate a type Id using the UndefinedSchemaIdHandling property.");
+            }, @"Unresolved circular reference for type 'pyRevitLabs.Json.Tests.TestObjects.CircularReferenceClass'. Explicitly define an Id for the type using a JsonObject/JsonArray attribute or automatically generate a type Id using the UndefinedSchemaIdHandling property.");
         }
 
         [Test]
@@ -386,7 +386,7 @@ namespace Newtonsoft.Json.Tests.Schema
             string json = schema.ToString();
 
             StringAssert.AreEqual(@"{
-  ""id"": ""Newtonsoft.Json.Tests.TestObjects.VersionOld"",
+  ""id"": ""pyRevitLabs.Json.Tests.TestObjects.VersionOld"",
   ""type"": [
     ""object"",
     ""null""
@@ -440,7 +440,7 @@ namespace Newtonsoft.Json.Tests.Schema
             string json = schema.ToString();
 
             StringAssert.AreEqual(@"{
-  ""id"": ""Newtonsoft.Json.Tests.Schema.SerializableTestObject"",
+  ""id"": ""pyRevitLabs.Json.Tests.Schema.SerializableTestObject"",
   ""type"": [
     ""object"",
     ""null""
@@ -539,7 +539,7 @@ namespace Newtonsoft.Json.Tests.Schema
             string json = jsonSchema.ToString();
 
             StringAssert.AreEqual(@"{
-  ""id"": ""Newtonsoft.Json.Tests.TestObjects.CircularReferenceClass"",
+  ""id"": ""pyRevitLabs.Json.Tests.TestObjects.CircularReferenceClass"",
   ""type"": [
     ""object"",
     ""null""
@@ -550,7 +550,7 @@ namespace Newtonsoft.Json.Tests.Schema
       ""type"": ""string""
     },
     ""Child"": {
-      ""$ref"": ""Newtonsoft.Json.Tests.TestObjects.CircularReferenceClass""
+      ""$ref"": ""pyRevitLabs.Json.Tests.TestObjects.CircularReferenceClass""
     }
   }
 }", json);
@@ -566,7 +566,7 @@ namespace Newtonsoft.Json.Tests.Schema
             string json = jsonSchema.ToString();
 
             StringAssert.AreEqual(@"{
-  ""id"": ""Newtonsoft.Json.Tests.TestObjects.JsonPropertyWithHandlingValues"",
+  ""id"": ""pyRevitLabs.Json.Tests.TestObjects.JsonPropertyWithHandlingValues"",
   ""required"": true,
   ""type"": [
     ""object"",
@@ -617,13 +617,13 @@ namespace Newtonsoft.Json.Tests.Schema
       ]
     },
     ""ReferenceLoopHandlingErrorProperty"": {
-      ""$ref"": ""Newtonsoft.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
+      ""$ref"": ""pyRevitLabs.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
     },
     ""ReferenceLoopHandlingIgnoreProperty"": {
-      ""$ref"": ""Newtonsoft.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
+      ""$ref"": ""pyRevitLabs.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
     },
     ""ReferenceLoopHandlingSerializeProperty"": {
-      ""$ref"": ""Newtonsoft.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
+      ""$ref"": ""pyRevitLabs.Json.Tests.TestObjects.JsonPropertyWithHandlingValues""
     }
   }
 }", json);

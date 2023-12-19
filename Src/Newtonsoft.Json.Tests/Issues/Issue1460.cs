@@ -34,23 +34,23 @@ using System.Threading;
 #if !(NET20 || NET35 || NET40 || PORTABLE40)
 using System.Threading.Tasks;
 #endif
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using pyRevitLabs.Json;
+using pyRevitLabs.Json.Linq;
 using System.Xml;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Utilities;
 #if !NET20
 using System.Xml.Linq;
 #endif
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
 
-namespace Newtonsoft.Json.Tests.Issues
+namespace pyRevitLabs.Json.Tests.Issues
 {
     [TestFixture]
     public class Issue1460 : TestFixtureBase

@@ -27,20 +27,20 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Bson;
+using pyRevitLabs.Json.Converters;
+using pyRevitLabs.Json.Serialization;
+using pyRevitLabs.Json.Utilities;
 #if DNXCORE50
 using Xunit;
 using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+using Assert = pyRevitLabs.Json.Tests.XUnitAssert;
 #else
 using NUnit.Framework;
 #endif
-using Newtonsoft.Json.Tests.TestObjects;
+using pyRevitLabs.Json.Tests.TestObjects;
 
-namespace Newtonsoft.Json.Tests.Converters
+namespace pyRevitLabs.Json.Tests.Converters
 {
     [TestFixture]
     public class RegexConverterTests : TestFixtureBase

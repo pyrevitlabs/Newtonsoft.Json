@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks Condition="'$(TestFrameworks)'==''">net46;net40;net35;net20;net5.0;net6.0;netcoreapp3.1;netcoreapp2.1</TargetFrameworks>
+    <AssemblyName>pyRevitLabs.Json.Tests</AssemblyName>
+    <RootNamespace>pyRevitLabs.Json.Tests</RootNamespace>
+    
+<!--    <TargetFrameworks Condition="'$(TestFrameworks)'==''">net46;net40;net35;net20;net5.0;net6.0;netcoreapp3.1;netcoreapp2.1</TargetFrameworks>-->
+    <TargetFrameworks Condition="'$(TestFrameworks)'==''">net6.0;net46</TargetFrameworks>
     <TargetFrameworks Condition="'$(TestFrameworks)'!=''">$(TestFrameworks)</TargetFrameworks>
     <LangVersion>9.0</LangVersion>
     <VersionPrefix>1.0</VersionPrefix>
@@ -9,8 +13,6 @@
     <Product>Json.NET</Product>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Copyright>Copyright © James Newton-King 2008</Copyright>
-    <AssemblyName>Newtonsoft.Json.Tests</AssemblyName>
-    <RootNamespace>Newtonsoft.Json.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <!-- Workaround for https://github.com/nunit/nunit3-vs-adapter/issues/296 -->
     <DebugType Condition="'$(TargetFramework)' != '' AND '$(TargetFramework)' != 'netcoreapp2.1' AND '$(TargetFramework)' != 'netcoreapp3.1' AND '$(TargetFramework)' != 'net5.0' AND '$(TargetFramework)' != 'net6.0'">Full</DebugType>    

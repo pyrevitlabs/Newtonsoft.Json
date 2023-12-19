@@ -25,7 +25,7 @@
 
 #nullable disable
 
-namespace Newtonsoft.Json.Bson
+namespace pyRevitLabs.Json.Bson
 {
     internal enum BsonType : sbyte
     {

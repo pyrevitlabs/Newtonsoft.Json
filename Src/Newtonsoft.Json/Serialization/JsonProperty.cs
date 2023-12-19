@@ -26,13 +26,13 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using Newtonsoft.Json.Utilities;
+using pyRevitLabs.Json.Utilities;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using pyRevitLabs.Json.Utilities.LinqBridge;
 #endif
 
-namespace Newtonsoft.Json.Serialization
+namespace pyRevitLabs.Json.Serialization
 {
     /// <summary>
     /// Maps a JSON property to a .NET member or constructor parameter.
